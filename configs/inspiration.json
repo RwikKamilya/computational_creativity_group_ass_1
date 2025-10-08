@@ -1,0 +1,280 @@
+{
+  "version": "0.1.0",
+  "units": {
+    "mass": "g",
+    "egg_unit_g": 50
+  },
+
+  "categories": [
+    {
+      "id": "cookie",
+      "name": "Cookie",
+      "required_ingredients": ["butter_unsalted", "egg_whole"],
+      "required_roles": ["base", "fat", "binder", "sweetener"],
+      "optional_roles": ["riser", "flavour", "salt", "inclusion"],
+      "ratio_constraints": {
+        "base": { "min": 0.30, "max": 0.60 },
+        "fat": { "min": 0.15, "max": 0.35 },
+        "sweetener": { "min": 0.15, "max": 0.35 },
+        "binder": { "min": 0.05, "max": 0.15 },
+        "riser": { "min": 0.003, "max": 0.02 },
+        "salt": { "min": 0.002, "max": 0.01 }
+      },
+      "size_constraints": { "total_mass_g": { "min": 300, "max": 1200 } }
+    },
+    {
+      "id": "cake",
+      "name": "Cake",
+      "required_roles": ["base", "fat", "binder", "sweetener", "liquid", "riser"],
+      "optional_roles": ["flavour", "salt", "inclusion"],
+      "ratio_constraints": {
+        "base": { "min": 0.25, "max": 0.50 },
+        "fat": { "min": 0.12, "max": 0.28 },
+        "sweetener": { "min": 0.18, "max": 0.35 },
+        "binder": { "min": 0.08, "max": 0.18 },
+        "liquid": { "min": 0.12, "max": 0.30 },
+        "riser": { "min": 0.005, "max": 0.02 },
+        "salt": { "min": 0.002, "max": 0.01 }
+      },
+      "size_constraints": { "total_mass_g": { "min": 600, "max": 2000 } }
+    }
+  ],
+
+  "roles": {
+    "base": "Provides starch/structure",
+    "fat": "Tenderizes, binds, carries flavour",
+    "binder": "Eggs or substitutes that set structure",
+    "sweetener": "Sugar/syrups for sweetness & texture",
+    "liquid": "Hydration; dissolves sugar; gluten control",
+    "riser": "Leavening",
+    "salt": "Balances flavour",
+    "flavour": "Aromatics/spices/extracts",
+    "inclusion": "Chunks/mix-ins (chips, nuts, oats)"
+  },
+
+  "flavour_palette": {
+    "notes": [
+      "vanilla", "chocolate", "caramel", "nutty",
+      "citrus", "warm_spice", "oat", "coffee", "fruit"
+    ],
+    "compatibility": {
+      "vanilla":     { "chocolate": 0.95, "caramel": 0.90, "nutty": 0.85, "citrus": 0.70, "warm_spice": 0.80, "oat": 0.85, "coffee": 0.80, "fruit": 0.80 },
+      "chocolate":   { "vanilla": 0.95, "caramel": 0.85, "nutty": 0.90, "citrus": 0.60, "warm_spice": 0.75, "oat": 0.80, "coffee": 0.90, "fruit": 0.70 },
+      "caramel":     { "vanilla": 0.90, "chocolate": 0.85, "nutty": 0.85, "warm_spice": 0.80, "coffee": 0.80, "oat": 0.75, "citrus": 0.55, "fruit": 0.65 },
+      "nutty":       { "vanilla": 0.85, "chocolate": 0.90, "caramel": 0.85, "warm_spice": 0.80, "oat": 0.80, "citrus": 0.55, "coffee": 0.80, "fruit": 0.70 },
+      "citrus":      { "vanilla": 0.70, "chocolate": 0.60, "caramel": 0.55, "nutty": 0.55, "warm_spice": 0.65, "oat": 0.60, "coffee": 0.50, "fruit": 0.85 },
+      "warm_spice":  { "vanilla": 0.80, "chocolate": 0.75, "caramel": 0.80, "nutty": 0.80, "oat": 0.75, "citrus": 0.65, "coffee": 0.70, "fruit": 0.75 },
+      "oat":         { "vanilla": 0.85, "chocolate": 0.80, "caramel": 0.75, "nutty": 0.80, "warm_spice": 0.75, "fruit": 0.70 },
+      "coffee":      { "vanilla": 0.80, "chocolate": 0.90, "caramel": 0.80, "nutty": 0.80, "citrus": 0.50, "warm_spice": 0.70 },
+      "fruit":       { "vanilla": 0.80, "chocolate": 0.70, "caramel": 0.65, "nutty": 0.70, "oat": 0.70, "citrus": 0.85, "warm_spice": 0.75 }
+    }
+  },
+
+  "ingredients": {
+    "flour_ap": {
+      "name": "All-purpose flour",
+      "roles": ["base"],
+      "category": "dry",
+      "flavour_notes": [],
+      "density_g_per_ml": 0.55
+    },
+    "flour_almond": {
+      "name": "Almond flour",
+      "roles": ["base", "inclusion"],
+      "category": "dry",
+      "flavour_notes": ["nutty"],
+      "density_g_per_ml": 0.45
+    },
+    "butter_unsalted": {
+      "name": "Unsalted butter",
+      "roles": ["fat"],
+      "category": "fat",
+      "flavour_notes": ["caramel"],
+      "state": "solid",
+      "melting_point_c": 32
+    },
+    "oil_neutral": {
+      "name": "Neutral oil",
+      "roles": ["fat"],
+      "category": "fat",
+      "flavour_notes": [],
+      "state": "liquid"
+    },
+    "egg_whole": {
+      "name": "Egg (whole)",
+      "roles": ["binder"],
+      "category": "wet",
+      "flavour_notes": [],
+      "unit_g": 50
+    },
+    "sugar_white": {
+      "name": "White sugar",
+      "roles": ["sweetener"],
+      "category": "dry",
+      "flavour_notes": ["vanilla"],
+      "crystal": "fine"
+    },
+    "sugar_brown": {
+      "name": "Brown sugar",
+      "roles": ["sweetener"],
+      "category": "dry",
+      "flavour_notes": ["caramel"],
+      "molasses_pct": 0.05
+    },
+    "honey": {
+      "name": "Honey",
+      "roles": ["sweetener", "liquid"],
+      "category": "wet",
+      "flavour_notes": ["floral", "caramel"],
+      "water_activity": 0.6
+    },
+    "milk": {
+      "name": "Milk",
+      "roles": ["liquid"],
+      "category": "wet",
+      "flavour_notes": []
+    },
+    "baking_powder": {
+      "name": "Baking powder",
+      "roles": ["riser"],
+      "category": "dry",
+      "flavour_notes": []
+    },
+    "baking_soda": {
+      "name": "Baking soda",
+      "roles": ["riser"],
+      "category": "dry",
+      "flavour_notes": []
+    },
+    "salt_fine": {
+      "name": "Fine salt",
+      "roles": ["salt"],
+      "category": "dry",
+      "flavour_notes": []
+    },
+    "vanilla_extract": {
+      "name": "Vanilla extract",
+      "roles": ["flavour"],
+      "category": "aroma",
+      "flavour_notes": ["vanilla"]
+    },
+    "cocoa_powder": {
+      "name": "Cocoa powder",
+      "roles": ["flavour", "base"],
+      "category": "dry",
+      "flavour_notes": ["chocolate"]
+    },
+    "chocolate_chips": {
+      "name": "Chocolate chips",
+      "roles": ["inclusion", "flavour"],
+      "category": "solid",
+      "flavour_notes": ["chocolate"]
+    },
+    "oats_rolled": {
+      "name": "Rolled oats",
+      "roles": ["inclusion", "base"],
+      "category": "dry",
+      "flavour_notes": ["oat"]
+    },
+    "cinnamon": {
+      "name": "Ground cinnamon",
+      "roles": ["flavour"],
+      "category": "spice",
+      "flavour_notes": ["warm_spice"]
+    },
+    "lemon_zest": {
+      "name": "Lemon zest",
+      "roles": ["flavour"],
+      "category": "aroma",
+      "flavour_notes": ["citrus"]
+    },
+    "peanut_butter": {
+      "name": "Peanut butter",
+      "roles": ["fat", "flavour", "inclusion"],
+      "category": "fat",
+      "flavour_notes": ["nutty"]
+    }
+  },
+
+  "validity": {
+    "hard_rules": [
+      { "id": "cookie_must_have_butter_and_egg", "category": "cookie", "type": "requires_all_ingredients", "ingredients": ["butter_unsalted", "egg_whole"] },
+      { "id": "no_dual_risers", "type": "max_role_count", "role": "riser", "max": 1 },
+      { "id": "at_least_one_flavour", "type": "min_role_count_any", "roles": ["flavour", "inclusion"], "min": 1 }
+    ],
+    "soft_rules": [
+      { "id": "prefer_brown_sugar_with_chocolate", "type": "pair_preference", "if_any": ["cocoa_powder", "chocolate_chips"], "prefer": ["sugar_brown"], "weight": 0.1 },
+      { "id": "oat_loves_warm_spice", "type": "tag_preference", "ingredient": "oats_rolled", "note": "warm_spice", "weight": 0.1 }
+    ]
+  },
+
+  "seed_recipes": [
+    {
+      "id": "classic_choc_chip",
+      "category": "cookie",
+      "name": "Classic Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "sugar_white": 120,
+        "sugar_brown": 120,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 5,
+        "chocolate_chips": 150
+      },
+      "method_template": "cream_fat_sugar_add_eggs_add_dry_fold_inclusions"
+    },
+    {
+      "id": "chewy_oatmeal",
+      "category": "cookie",
+      "name": "Chewy Oatmeal Cookies",
+      "ingredients_g": {
+        "flour_ap": 220,
+        "oats_rolled": 150,
+        "butter_unsalted": 170,
+        "sugar_brown": 150,
+        "sugar_white": 80,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "cinnamon": 3,
+        "vanilla_extract": 5
+      },
+      "method_template": "cream_fat_sugar_add_eggs_add_dry_fold_inclusions"
+    },
+    {
+      "id": "vanilla_sponge",
+      "category": "cake",
+      "name": "Simple Vanilla Sponge",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 180,
+        "sugar_white": 220,
+        "egg_whole": 200,
+        "milk": 160,
+        "baking_powder": 10,
+        "salt_fine": 4,
+        "vanilla_extract": 6
+      },
+      "method_template": "cream_fat_sugar_add_eggs_add_dry_with_liquid_bake_pan"
+    }
+  ],
+
+  "method_templates": {
+    "cream_fat_sugar_add_eggs_add_dry_fold_inclusions": [
+      "Cream butter and sugars until light.",
+      "Beat in eggs and vanilla.",
+      "Whisk dry ingredients; add to bowl, mixing just to combine.",
+      "Fold inclusions (chips, oats, etc.).",
+      "Scoop, chill if desired, bake."
+    ],
+    "cream_fat_sugar_add_eggs_add_dry_with_liquid_bake_pan": [
+      "Cream butter and sugar.",
+      "Beat in eggs and vanilla.",
+      "Alternate dry mix and liquid, mixing to a smooth batter.",
+      "Pan and bake."
+    ]
+  }
+}

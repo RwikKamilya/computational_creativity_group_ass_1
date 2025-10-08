@@ -1,0 +1,610 @@
+{
+  "seed_recipes": [
+    {
+      "id": "classic_choc_chip",
+      "category": "cookie",
+      "name": "Classic Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "sugar_white": 120,
+        "sugar_brown": 120,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 5,
+        "chocolate_chips": 150
+      }
+    },
+    {
+      "id": "brown_sugar_choc_chip",
+      "category": "cookie",
+      "name": "Brown Sugar Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "sugar_white": 80,
+        "sugar_brown": 180,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 170
+      }
+    },
+    {
+      "id": "double_chocolate_chunk",
+      "category": "cookie",
+      "name": "Double Chocolate Chunk Cookies",
+      "ingredients_g": {
+        "flour_ap": 270,
+        "cocoa_powder": 40,
+        "butter_unsalted": 170,
+        "sugar_white": 110,
+        "sugar_brown": 130,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 180
+      }
+    },
+    {
+      "id": "oatmeal_choc_chip",
+      "category": "cookie",
+      "name": "Oatmeal Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "oats_rolled": 150,
+        "butter_unsalted": 170,
+        "sugar_white": 110,
+        "sugar_brown": 140,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 150,
+        "cinnamon": 2
+      }
+    },
+    {
+      "id": "chewy_oatmeal_cinnamon",
+      "category": "cookie",
+      "name": "Chewy Oatmeal Cinnamon Cookies",
+      "ingredients_g": {
+        "flour_ap": 220,
+        "oats_rolled": 170,
+        "butter_unsalted": 170,
+        "sugar_white": 90,
+        "sugar_brown": 160,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 5,
+        "cinnamon": 3
+      }
+    },
+    {
+      "id": "peanut_butter_choc_chip",
+      "category": "cookie",
+      "name": "Peanut Butter Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 260,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "sugar_white": 100,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 3,
+        "vanilla_extract": 6,
+        "chocolate_chips": 160
+      }
+    },
+    {
+      "id": "peanut_butter_oat",
+      "category": "cookie",
+      "name": "Peanut Butter Oat Cookies",
+      "ingredients_g": {
+        "flour_ap": 220,
+        "oats_rolled": 160,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "sugar_white": 90,
+        "sugar_brown": 140,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 5
+      }
+    },
+    {
+      "id": "honey_oatmeal",
+      "category": "cookie",
+      "name": "Honey Oatmeal Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "oats_rolled": 160,
+        "butter_unsalted": 170,
+        "honey": 60,
+        "sugar_brown": 140,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 5,
+        "cinnamon": 2
+      }
+    },
+    {
+      "id": "chewy_sugar",
+      "category": "cookie",
+      "name": "Chewy Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 320,
+        "butter_unsalted": 180,
+        "sugar_white": 220,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 8
+      }
+    },
+    {
+      "id": "vanilla_sugar",
+      "category": "cookie",
+      "name": "Vanilla Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 310,
+        "butter_unsalted": 180,
+        "sugar_white": 210,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 10
+      }
+    },
+    {
+      "id": "cinnamon_sugar",
+      "category": "cookie",
+      "name": "Cinnamon Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 310,
+        "butter_unsalted": 170,
+        "sugar_white": 200,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 3,
+        "vanilla_extract": 6,
+        "cinnamon": 3
+      }
+    },
+    {
+      "id": "lemon_zest_sugar",
+      "category": "cookie",
+      "name": "Lemon Zest Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 310,
+        "butter_unsalted": 170,
+        "sugar_white": 210,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 3,
+        "vanilla_extract": 5,
+        "lemon_zest": 4
+      }
+    },
+    {
+      "id": "chocolate_peanut_butter",
+      "category": "cookie",
+      "name": "Chocolate Peanut Butter Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "cocoa_powder": 45,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "sugar_white": 90,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 3,
+        "vanilla_extract": 6
+      }
+    },
+    {
+      "id": "cocoa_oatmeal",
+      "category": "cookie",
+      "name": "Cocoa Oatmeal Cookies",
+      "ingredients_g": {
+        "flour_ap": 220,
+        "oats_rolled": 160,
+        "cocoa_powder": 40,
+        "butter_unsalted": 170,
+        "sugar_white": 100,
+        "sugar_brown": 140,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6
+      }
+    },
+    {
+      "id": "thick_chewy_choc_chip",
+      "category": "cookie",
+      "name": "Thick & Chewy Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 330,
+        "butter_unsalted": 180,
+        "sugar_white": 110,
+        "sugar_brown": 170,
+        "egg_whole": 100,
+        "baking_soda": 4,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 180
+      }
+    },
+    {
+      "id": "bakery_style_choc_chip",
+      "category": "cookie",
+      "name": "Bakery-Style Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 340,
+        "butter_unsalted": 185,
+        "sugar_white": 120,
+        "sugar_brown": 170,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 7,
+        "chocolate_chips": 200
+      }
+    },
+    {
+      "id": "soft_chewy_oatmeal",
+      "category": "cookie",
+      "name": "Soft & Chewy Oatmeal Cookies",
+      "ingredients_g": {
+        "flour_ap": 230,
+        "oats_rolled": 170,
+        "butter_unsalted": 170,
+        "sugar_white": 90,
+        "sugar_brown": 160,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "cinnamon": 2
+      }
+    },
+    {
+      "id": "brown_sugar_oat",
+      "category": "cookie",
+      "name": "Brown Sugar Oat Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "oats_rolled": 160,
+        "butter_unsalted": 170,
+        "sugar_white": 70,
+        "sugar_brown": 170,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 5,
+        "cinnamon": 2
+      }
+    },
+    {
+      "id": "honey_choc_chip",
+      "category": "cookie",
+      "name": "Honey Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "honey": 60,
+        "sugar_brown": 140,
+        "sugar_white": 70,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 160
+      }
+    },
+    {
+      "id": "milk_choc_chip",
+      "category": "cookie",
+      "name": "Milk Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "sugar_white": 120,
+        "sugar_brown": 120,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 170
+      }
+    },
+    {
+      "id": "extra_vanilla_choc_chip",
+      "category": "cookie",
+      "name": "Extra Vanilla Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 170,
+        "sugar_white": 120,
+        "sugar_brown": 120,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 10,
+        "chocolate_chips": 180
+      }
+    },
+    {
+      "id": "double_chocolate_oat",
+      "category": "cookie",
+      "name": "Double Chocolate Oat Cookies",
+      "ingredients_g": {
+        "flour_ap": 220,
+        "oats_rolled": 140,
+        "cocoa_powder": 45,
+        "butter_unsalted": 170,
+        "sugar_white": 100,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 170
+      }
+    },
+    {
+      "id": "pb_double_chocolate",
+      "category": "cookie",
+      "name": "Peanut Butter Double Chocolate Cookies",
+      "ingredients_g": {
+        "flour_ap": 230,
+        "cocoa_powder": 40,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "sugar_white": 90,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 3,
+        "vanilla_extract": 6,
+        "chocolate_chips": 160
+      }
+    },
+    {
+      "id": "oatmeal_cinnamon_choc_chip",
+      "category": "cookie",
+      "name": "Oatmeal Cinnamon Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 230,
+        "oats_rolled": 160,
+        "butter_unsalted": 170,
+        "sugar_white": 100,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "cinnamon": 3,
+        "chocolate_chips": 160
+      }
+    },
+    {
+      "id": "salted_choc_chip",
+      "category": "cookie",
+      "name": "Salted Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 175,
+        "sugar_white": 110,
+        "sugar_brown": 130,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 5,
+        "vanilla_extract": 6,
+        "chocolate_chips": 180
+      }
+    },
+    {
+      "id": "toasted_oat_choc_chip",
+      "category": "cookie",
+      "name": "Toasted Oat Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "oats_rolled": 170,
+        "butter_unsalted": 170,
+        "sugar_white": 100,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 160
+      }
+    },
+    {
+      "id": "brown_sugar_butter",
+      "category": "cookie",
+      "name": "Brown Sugar Butter Cookies",
+      "ingredients_g": {
+        "flour_ap": 320,
+        "butter_unsalted": 180,
+        "sugar_white": 80,
+        "sugar_brown": 200,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 8
+      }
+    },
+    {
+      "id": "chewy_cocoa_sugar",
+      "category": "cookie",
+      "name": "Chewy Cocoa Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 280,
+        "cocoa_powder": 40,
+        "butter_unsalted": 170,
+        "sugar_white": 200,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 8
+      }
+    },
+    {
+      "id": "pb_honey",
+      "category": "cookie",
+      "name": "Peanut Butter Honey Cookies",
+      "ingredients_g": {
+        "flour_ap": 250,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "honey": 70,
+        "sugar_brown": 130,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 3,
+        "vanilla_extract": 6
+      }
+    },
+    {
+      "id": "oatmeal_plain_chewy",
+      "category": "cookie",
+      "name": "Oatmeal Plain Chewy Cookies",
+      "ingredients_g": {
+        "flour_ap": 230,
+        "oats_rolled": 170,
+        "butter_unsalted": 170,
+        "sugar_white": 90,
+        "sugar_brown": 160,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6
+      }
+    },
+    {
+      "id": "lemon_vanilla_sugar",
+      "category": "cookie",
+      "name": "Lemon Vanilla Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 310,
+        "butter_unsalted": 175,
+        "sugar_white": 210,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 3,
+        "vanilla_extract": 6,
+        "lemon_zest": 5
+      }
+    },
+    {
+      "id": "brown_sugar_choc_oat",
+      "category": "cookie",
+      "name": "Brown Sugar Chocolate Oat Cookies",
+      "ingredients_g": {
+        "flour_ap": 230,
+        "oats_rolled": 150,
+        "butter_unsalted": 170,
+        "sugar_white": 70,
+        "sugar_brown": 180,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 150
+      }
+    },
+    {
+      "id": "cinnamon_pb",
+      "category": "cookie",
+      "name": "Cinnamon Peanut Butter Cookies",
+      "ingredients_g": {
+        "flour_ap": 260,
+        "butter_unsalted": 120,
+        "peanut_butter": 180,
+        "sugar_white": 90,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 3,
+        "vanilla_extract": 6,
+        "cinnamon": 2
+      }
+    },
+    {
+      "id": "vanilla_heavy_choc_chip",
+      "category": "cookie",
+      "name": "Vanilla-Forward Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 300,
+        "butter_unsalted": 175,
+        "sugar_white": 120,
+        "sugar_brown": 120,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 12,
+        "chocolate_chips": 200
+      }
+    },
+    {
+      "id": "caramel_note_brown_sugar",
+      "category": "cookie",
+      "name": "Caramel-Note Brown Sugar Cookies",
+      "ingredients_g": {
+        "flour_ap": 310,
+        "butter_unsalted": 180,
+        "sugar_white": 70,
+        "sugar_brown": 210,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 8
+      }
+    },
+    {
+      "id": "chewy_double_choc",
+      "category": "cookie",
+      "name": "Chewy Double Chocolate Cookies",
+      "ingredients_g": {
+        "flour_ap": 270,
+        "cocoa_powder": 45,
+        "butter_unsalted": 175,
+        "sugar_white": 100,
+        "sugar_brown": 150,
+        "egg_whole": 100,
+        "baking_soda": 5,
+        "salt_fine": 4,
+        "vanilla_extract": 8,
+        "chocolate_chips": 170
+      }
+    },
+    {
+      "id": "honey_oat_choc_chip",
+      "category": "cookie",
+      "name": "Honey Oat Chocolate Chip Cookies",
+      "ingredients_g": {
+        "flour_ap": 240,
+        "oats_rolled": 150,
+        "butter_unsalted": 170,
+        "honey": 60,
+        "sugar_white": 80,
+        "sugar_brown": 140,
+        "egg_whole": 100,
+        "baking_powder": 6,
+        "salt_fine": 4,
+        "vanilla_extract": 6,
+        "chocolate_chips": 150
+      }
+    }
+  ]
+}
