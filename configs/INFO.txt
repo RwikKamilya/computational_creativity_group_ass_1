@@ -1,0 +1,132 @@
+Overview of the inspiring set files.
+
+Summary:
+---------
+- ingredients.json → defines the ingredients and their properties.
+- init_recipes.json → provides base recipes that use those ingredients.
+- flavor_pairings.json → supports flavor compatibility evaluation.
+- overall_configs.json → defines rules and constraints for generating new recipes.
+
+
+---------------------------------------------------------
+1. ingredients.json
+---------------------------------------------------------
+Purpose:
+- Defines the knowledge base of possible ingredients.
+- Each ingredient has roles, category, and flavor associations.
+
+Structure:
+{
+  "ingredient_id": {
+    "name": "Human-readable name",
+    "roles": [ "base", "fat", "sweetener", ... ],
+    "category": "dry" | "wet" | "fat" | "spice" | "herb" | ...,
+    "flavor_notes": [ "vanilla", "caramel", ... ]
+  },
+  ...
+}
+
+Notes:
+- Serves as the ingredient ontology.
+- Roles are used to ensure recipe validity (structure, fat, binder, etc.).
+- Flavor notes link to flavor_pairings.json for flavor logic.
+
+
+---------------------------------------------------------
+2. init_recipes.json
+---------------------------------------------------------
+Purpose:
+- Contains the inspiring set of existing recipes.
+- Used as the base population for the genetic algorithm.
+
+Structure:
+{
+  "seed_recipes": [
+    {
+      "id": "unique_recipe_id",
+      "category": "cookie" | "cake",
+      "name": "Recipe name",
+      "ingredients_g": {
+        "ingredient_id": amount_in_grams,
+        ...
+      }
+    },
+    ...
+  ]
+}
+
+Notes:
+- Defines starting recipe “genotypes”.
+- Ingredient IDs must match those in ingredients.json.
+- Quantities are standardized in grams.
+
+
+---------------------------------------------------------
+3. flavor_pairings.json
+---------------------------------------------------------
+source: https://www.kaggle.com/datasets/juliparsons/recipe-flavor-rankings
+
+Purpose:
+- Contains empirical flavor compatibility data between pairs of flavors.
+- Used to improve the GA’s flavor coherence and diversity.
+
+Structure:
+[
+  {
+    "flavor": "chocolate",
+    "flavor2": "peanut",
+    "pairing_count": 87,
+    "avg_rating": 4.7,        (Average rating of all recipes containing both flavors)
+    "avg_success": 0.92       (average percent chance a user would make recipe containing both flavors again)
+  },
+  ...
+]
+
+Notes:
+- Can be used to evaluate or guide mutations/crossovers.
+- Flavor names correspond to “flavor_notes” in ingredients.json.
+
+
+---------------------------------------------------------
+4. overall_configs.json
+---------------------------------------------------------
+Purpose:
+- Defines the global logic, constraints, and rules
+  for generating and evaluating recipes.
+
+Structure:
+{
+  "version": "0.1.0",
+  "units": { "mass": "g", "egg_unit_g": 50 },
+
+  "categories": [
+    {
+      "id": "cookie",
+      "required_ingredients": [...],
+      "required_roles": [...],
+      "optional_roles": [...],
+      "ratio_constraints": { "base": { "min": 0.3, "max": 0.6 }, ... },
+      "size_constraints": { "total_mass_g": { "min": 300, "max": 1200 } }
+    },
+    {
+      "id": "cake",
+      ...
+    }
+  ],
+
+  "roles": {
+    "base": "Provides starch/structure",
+    "fat": "Tenderizes, binds, carries flavor",
+    ...
+  },
+
+  "validity": {
+    "hard_rules": [ ... ],
+    "soft_rules": [ ... ]
+  }
+}
+
+Notes:
+- Controls the “fitness function” logic.
+- Hard rules ensure validity (e.g., cookie must have butter and egg).
+- Soft rules bias toward preferred combinations.
