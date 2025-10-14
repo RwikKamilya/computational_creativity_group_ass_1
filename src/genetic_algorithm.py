@@ -89,13 +89,7 @@ class GeneticAlgorithmConfig:
 # ---------- Algorithm ----------
 
 class GeneticAlgorithm:
-    """
-    GeneticAlgorithm
 
-    Usage:
-        ga = GeneticAlgorithm(initial_recipes, fitness_fn, ga_cfg, all_ingredient_ids)
-        best_recipe, best_score = ga.run(verbose=True)
-    """
 
     def __init__(
         self,
@@ -111,8 +105,6 @@ class GeneticAlgorithm:
         self.cfg = ga_cfg or GeneticAlgorithmConfig()
         self.rng = random.Random(self.cfg.random_seed)
 
-        # fitness
-
         if all_ingredient_ids is None:
             all_set = set()
             for r in initial_recipes:
@@ -126,17 +118,13 @@ class GeneticAlgorithm:
 
     # ---- public ----
 
-    def run(self, verbose: bool = True) -> Tuple[Recipe, float]:
-        """
-        Run evolution for max_generations. Returns (best_recipe, best_fitness).
-        If the fitness function exposes set_reference(population), we call it every generation.
-        """
+    def run(self, verbose: bool = True, top_k: int = 5) -> List[Tuple[Recipe, float]]:
         best: Optional[Recipe] = None
         best_fit: float = float("-inf")
 
         for gen in range(1, self.cfg.max_generations + 1):
-            if hasattr(self.fitness_fn, "set_reference"):
-                getattr(self.fitness_fn, "set_reference")(self.population)
+            # if hasattr(self.fitness_fn, "set_reference"):
+            #     getattr(self.fitness_fn, "set_reference")(self.population)
 
             scored = [(r, self.fitness_fn(r)) for r in self.population]
             scored.sort(key=lambda x: x[1], reverse=True)
@@ -147,6 +135,7 @@ class GeneticAlgorithm:
 
             if verbose:
                 mean_score = sum(s for _, s in scored) / len(scored)
+                # print(f"[Gen {gen}] best={scored[0][1]:.4f}  mean={mean_score:.4f}")
                 print(f"[Gen {gen}] best={scored[0][1]:.4f}  mean={mean_score:.4f}")
 
             # # elitism
@@ -168,20 +157,21 @@ class GeneticAlgorithm:
                     child = self._crossover(p1, p2)
                 else:
                     child = copy.deepcopy(self.rng.choice(parents_pool))
+                    child["id"] = f"child_{self.rng.randint(0, 10 ** 9)}"
+                    child["name"] = f"cookie_{self.rng.randint(0, 10 ** 6)}"
+                    # child = copy.deepcopy(self.rng.choice(parents_pool))
 
                 child = self._mutate(child)
                 next_pop.append(child)
 
             self.population = next_pop
 
-        # final check
         final_scored = [(r, self.fitness_fn(r)) for r in self.population]
         final_scored.sort(key=lambda x: x[1], reverse=True)
-        if final_scored[0][1] > best_fit:
-            best, best_fit = copy.deepcopy(final_scored[0][0]), final_scored[0][1]
+        k = min(top_k, len(final_scored))
 
-        assert best is not None
-        return best, best_fit
+        top_k = [(copy.deepcopy(r), s) for (r, s) in final_scored[:k]]
+        return top_k
 
     # ---- internals ----
 
@@ -216,6 +206,13 @@ class GeneticAlgorithm:
         if not candidates:
             return None
         return self.rng.choice(candidates)
+
+    def _renorm_total(self, g, target=800.0):
+        tot = sum(g.values()) or 1.0
+        scale = clamp(target / tot, 0.5, 2.0)  # don't over-warp
+        for k in list(g.keys()):
+            g[k] = clamp(g[k] * scale, self.cfg.min_grams, self.cfg.max_grams)
+        return g
 
     def _crossover(self, p1: Recipe, p2: Recipe) -> Recipe:
         g1, g2 = p1["ingredients_g"], p2["ingredients_g"]
@@ -261,8 +258,12 @@ class GeneticAlgorithm:
         # per-ingredient noise
         for k in list(g.keys()):
             if self.rng.random() < self.cfg.mutation_rate:
-                noise = self.rng.gauss(0.0, strength * total)
-                new_v = clamp(float(g[k]) + noise, self.cfg.min_grams, self.cfg.max_grams)
+                qk = float(g[k])
+                # per-ingredient std: proportional to its own amount
+                # floor keeps tiny items tweakable; cap avoids giant swings
+                sigma_k = clamp(self.cfg.mutation_strength * qk, 0.05, 50.0)
+                noise = self.rng.gauss(0.0, sigma_k)
+                new_v = clamp(qk + noise, self.cfg.min_grams, self.cfg.max_grams)
                 if new_v <= self.cfg.min_grams:
                     del g[k]
                 else:
@@ -280,6 +281,31 @@ class GeneticAlgorithm:
             remove_p = min(1.0, remove_p + self.cfg.bloat_remove_boost)
         if self.rng.random() < remove_p and len(g) > 1:
             del g[self.rng.choice(sorted(g.keys()))]
+
+        g = self._renorm_total(g, target=self.rng.uniform(700.0, 1000.0))
+
+        T = sum(g.values()) or 1.0
+
+        ABS_CAP = {
+            "salt_fine": 8.0,  # g
+            "vanilla_extract": 12.0,  # g
+            "almond_extract": 6.0,  # g
+            "yeast_dry": 0.0,  # cookies rarely use yeast; set to 0 to remove
+        }
+        FRAC_CAP = {
+            "salt_fine": 0.015,  # ≤1.5% of total dough
+            "vanilla_extract": 0.020,  # ≤2.0% of total dough
+        }
+
+        # drop/limit banned or capped items
+        for k in list(g.keys()):
+            if k in ABS_CAP:
+                if ABS_CAP[k] == 0.0:
+                    del g[k]
+                    continue
+                g[k] = min(g[k], ABS_CAP[k])
+            if k in FRAC_CAP:
+                g[k] = min(g[k], FRAC_CAP[k] * T)
 
         # cleanup
         if self.cfg.trim_below_grams > 0:

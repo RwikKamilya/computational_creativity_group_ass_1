@@ -22,7 +22,8 @@ from __future__ import annotations
 import argparse
 import copy
 import json
-from typing import Any, Dict, List, Optional
+import math
+from typing import Any, Dict, List, Optional, Tuple
 
 import pandas as pd
 
@@ -70,6 +71,71 @@ def aspects_table(population: List[Recipe], evaluator: RecipeFitness) -> pd.Data
     return (pd.DataFrame(rows).sort_values("fitness", ascending=False).reset_index(drop=True))
 
 
+
+def select_diverse_topk(
+    scored: List[Tuple[dict, float]],
+    k: int = 5,
+    lam: float = 0.7,
+    all_ingredient_ids: List[str] | None = None,  # unused now, kept for signature compat
+) -> List[Tuple[dict, float]]:
+    """
+    scored: list of (recipe_dict, fitness) sorted desc by fitness
+    Returns k items (recipe, fitness) chosen by MMR with Jaccard(set-of-ingredients) diversity.
+    MMR(r) = lam * fitness(r) - (1 - lam) * max_{s in chosen} Jaccard(set(r), set(s))
+    """
+
+    # --- 0) de-duplicate by id while preserving best score first ---
+    seen_ids = set()
+    dedup: List[Tuple[dict, float]] = []
+    for r, s in scored:
+        rid = r.get("id") or f"anon_{id(r)}"
+        if rid in seen_ids:
+            continue
+        seen_ids.add(rid)
+        dedup.append((r, float(s)))
+
+    if not dedup:
+        return []
+
+    def ing_set(recipe: dict) -> set:
+        return set(recipe.get("ingredients_g", {}).keys())
+
+    def jaccard(a: set, b: set) -> float:
+        if not a and not b:
+            return 0.0
+        inter = len(a & b)
+        union = len(a | b) or 1
+        return inter / union
+
+    # --- 1) greedy MMR selection ---
+    chosen: List[Tuple[dict, float]] = []
+    chosen_sets: List[set] = []
+
+    # take the best by fitness first
+    r0, s0 = dedup[0]
+    chosen.append((copy.deepcopy(r0), s0))
+    chosen_sets.append(ing_set(r0))
+
+    candidates = dedup[1:]
+    while len(chosen) < min(k, len(dedup)) and candidates:
+        best_idx = None
+        best_mmr = -1e18
+
+        for idx, (r, s) in enumerate(candidates):
+            rs = ing_set(r)
+            max_sim = max((jaccard(rs, cs) for cs in chosen_sets), default=0.0)
+            mmr = lam * s - (1.0 - lam) * max_sim
+            if mmr > best_mmr:
+                best_mmr = mmr
+                best_idx = idx
+
+        r_star, s_star = candidates.pop(best_idx)
+        chosen.append((copy.deepcopy(r_star), s_star))
+        chosen_sets.append(ing_set(r_star))
+
+    return chosen
+
+
 # ---------- CLI ----------
 
 def parse_args() -> argparse.Namespace:
@@ -88,6 +154,7 @@ def parse_args() -> argparse.Namespace:
     return ap.parse_args()
 
 
+
 # ---------- Main ----------
 
 def main() -> None:
@@ -104,13 +171,13 @@ def main() -> None:
         flavor_pairings_path=args.pairings,
         category_id=args.category,
         weights={
-            "flavor_score":     0.0,   # blended flavor: 0.6*soft + 0.4*pairing
-            "pairing_score":    0.25,   # keep 0 unless you want an extra term
-            "soft_rules_score": 0.25,   # keep 0 unless you want separate accounting
-            "ratio_score":      0.25,
-            "novelty_score":    0.25,
-            "simplicity_score": 0.0,
-        },
+            "flavor_score": 1.10,  # lower a bit
+            "pairing_score": 0.20,
+            "soft_rules_score": 0.40,  # up
+            "ratio_score": 0.40,  # up
+            "novelty_score": 0.40,
+            "simplicity_score": 0.20,  # small nudge toward simpler recipes
+        }
     )
 
     evaluator.set_reference(seeds)  # seed novelty
@@ -122,20 +189,20 @@ def main() -> None:
         random_seed=args.seed,
 
         tournament_k=3,
-        survivor_fraction=0.60,
-        elitism_n=9,
+        survivor_fraction=0.90,
+        elitism_n=3,
 
         crossover_prob=0.90,
-        mutation_rate=0.30,
-        mutation_strength=0.15,
+        mutation_rate=0.50,
+        mutation_strength=0.20,
 
-        add_ingredient_prob=0.15,
-        remove_ingredient_prob=0.12,
+        add_ingredient_prob=0.30,
+        remove_ingredient_prob=0.25,
 
-        alpha_low=0.35,
-        alpha_high=0.65,
+        alpha_low=0.20,
+        alpha_high=0.80,
 
-        max_ingredients=18,
+        max_ingredients=30,
         trim_below_grams=0.5,
         bloat_remove_boost=0.35,
     )
@@ -148,35 +215,24 @@ def main() -> None:
         all_ingredient_ids=all_ings,
     )
 
+    final_recipes = ga.run(verbose=True, top_k=args.population)
+    top_k_recipes = select_diverse_topk(final_recipes, k=5)
+    top_k_recipes = top_k_recipes[:5]
     # Run
-    best_recipe, best_score = ga.run(verbose=True)
 
-    # Report
-    print("\n=== BEST RECIPE ===")
-    print("Name     :", best_recipe.get("name"))
-    print("ID       :", best_recipe.get("id"))
-    print("Category :", best_recipe.get("category"))
-    print("Fitness  :", round(best_score, 4))
-    print("Ingredients (g):")
-    for k, v in sorted(best_recipe["ingredients_g"].items()):
-        print(f"  - {k:20s} : {float(v):.1f} g")
+    print(f"\n=== Top {len(top_k_recipes)} RECIPE ===")
 
-    # Final evaluation table
-    try:
-        final_pop = copy.deepcopy(ga.population)  # exposed by GA
-        evaluator.set_reference(final_pop)
-        df = aspects_table(final_pop, evaluator)
-    except Exception:
-        pool = seeds + [best_recipe]
-        evaluator.set_reference(pool)
-        df = aspects_table(pool, evaluator)
-
-    print("\n=== TOP 5 (final eval) ===")
-    print(df.head(5).to_string(index=False))
-
-    if args.save_csv:
-        df.to_csv(args.save_csv, index=False)
-        print(f"\nSaved: {args.save_csv}")
+    for rank, recipe_score_tuple in enumerate(top_k_recipes, start=1):
+        recipe = recipe_score_tuple[0]
+        fitness_score = recipe_score_tuple[1]
+        print("Rank     :", rank)
+        print("Name     :", recipe.get("name"))
+        print("ID       :", recipe.get("id"))
+        print("Category :", recipe.get("category"))
+        print("Fitness  :", round(fitness_score, 4))
+        print("Ingredients (g):")
+        for k, v in sorted(recipe["ingredients_g"].items()):
+            print(f"  - {k:20s} : {float(v):.1f} g")
 
 
 if __name__ == "__main__":

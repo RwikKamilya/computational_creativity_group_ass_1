@@ -1,19 +1,3 @@
-#!/usr/bin/env python3
-"""
-fitness_evaluator.py
-
-RecipeFitness: domain-aware fitness for cookie recipes.
-
-Scores:
-- ratio_score:   role proportion fit to category band
-- pairing_score: flavor compatibility (FlavorDB/Pairing table)
-- soft_rules_score: weighted soft rules (salt, sugar split, diversity, etc.)
-- novelty_score: set-difference vs current population (character roles only)
-- simplicity_score: reward moderate ingredient count
-
-Final fitness = weighted average of selected aspects (configurable).
-"""
-
 from __future__ import annotations
 
 import json
@@ -24,9 +8,7 @@ Recipe = Dict[str, Any]  # expects keys: id, name, category, ingredients_g
 
 
 class RecipeFitness:
-    """Domain-aware fitness evaluator for cookie recipes."""
 
-    # Considered base roles for novelty filtering
     BASE_ROLES = {"base", "fat", "sweetener", "liquid", "binder"}
 
     def __init__(
@@ -41,7 +23,6 @@ class RecipeFitness:
         self.CFG = overall_config
         self.category_id = category_id
 
-        # Pairings lookup (bidirectional)
         self.FP: Dict[Tuple[str, str], Dict[str, float]] = {}
         for row in flavor_pairings:
             a = str(row.get("flavor", "")).strip().lower()
@@ -88,7 +69,6 @@ class RecipeFitness:
             "simplicity_score": 0.00,
         }
 
-        # Reference set for novelty scoring (updated externally per generation)
         self._reference_recipes: List[Recipe] = []
 
     # ---------- Constructors ----------
@@ -113,7 +93,6 @@ class RecipeFitness:
     # ---------- External API ----------
 
     def set_reference(self, recipes: List[Recipe]) -> None:
-        """Provide a pool (e.g., current population) for novelty comparisons."""
         self._reference_recipes = list(recipes) if recipes else []
 
     def __call__(self, recipe: Recipe) -> float:

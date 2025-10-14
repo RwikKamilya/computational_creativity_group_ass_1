@@ -1,52 +1,116 @@
-[Gen 280] best=0.7099  mean=0.4366
-[Gen 281] best=0.7099  mean=0.4105
-[Gen 282] best=0.7099  mean=0.4345
-[Gen 283] best=0.7078  mean=0.4246
-[Gen 284] best=0.7078  mean=0.4169
-[Gen 285] best=0.7078  mean=0.4170
-[Gen 286] best=0.7084  mean=0.4071
-[Gen 287] best=0.7110  mean=0.4073
-[Gen 288] best=0.7084  mean=0.3674
-[Gen 289] best=0.7084  mean=0.3950
-[Gen 290] best=0.7084  mean=0.3732
-[Gen 291] best=0.7084  mean=0.4221
-[Gen 292] best=0.7084  mean=0.4067
-[Gen 293] best=0.7110  mean=0.4320
-[Gen 294] best=0.7110  mean=0.4220
-[Gen 295] best=0.7110  mean=0.4037
-[Gen 296] best=0.7084  mean=0.3920
-[Gen 297] best=0.7110  mean=0.3587
-[Gen 298] best=0.7110  mean=0.3278
-[Gen 299] best=0.7084  mean=0.3686
-[Gen 300] best=0.7084  mean=0.4026
+[Gen 2980] best=0.7985  mean=0.6715
+[Gen 2981] best=0.7985  mean=0.6622
+[Gen 2982] best=0.7985  mean=0.6811
+[Gen 2983] best=0.7985  mean=0.7102
+[Gen 2984] best=0.7985  mean=0.6996
+[Gen 2985] best=0.7985  mean=0.7075
+[Gen 2986] best=0.7985  mean=0.6878
+[Gen 2987] best=0.7985  mean=0.6464
+[Gen 2988] best=0.7985  mean=0.6702
+[Gen 2989] best=0.7985  mean=0.6734
+[Gen 2990] best=0.7985  mean=0.6765
+[Gen 2991] best=0.7985  mean=0.6519
+[Gen 2992] best=0.7985  mean=0.6938
+[Gen 2993] best=0.7985  mean=0.6654
+[Gen 2994] best=0.7985  mean=0.6975
+[Gen 2995] best=0.7985  mean=0.6714
+[Gen 2996] best=0.7985  mean=0.6817
+[Gen 2997] best=0.7985  mean=0.6810
+[Gen 2998] best=0.7985  mean=0.6723
+[Gen 2999] best=0.7985  mean=0.6384
+[Gen 3000] best=0.7985  mean=0.6618
 
-=== BEST RECIPE ===
-Name     : cookie_153618
-ID       : child_888821955
+=== Top 5 RECIPE ===
+Rank     : 1
+Name     : cookie_913756
+ID       : child_151437120
 Category : cookie
-Fitness  : 0.711
+Fitness  : 0.7985
 Ingredients (g):
-  - butter_unsalted      : 136.8 g
-  - cocoa_powder         : 119.4 g
-  - egg_whole            : 72.6 g
-  - flour_ap             : 122.1 g
-  - herb_lavender        : 10.0 g
-  - peanut_butter        : 70.2 g
+  - baking_powder        : 4.3 g
+  - baking_soda          : 6.5 g
+  - butter_unsalted      : 224.7 g
+  - buttermilk           : 26.3 g
+  - cream_cheese         : 35.1 g
+  - egg_whole            : 57.8 g
+  - flour_ap             : 263.5 g
   - salt_fine            : 5.6 g
-  - sugar_brown          : 110.7 g
-  - sugar_white          : 154.9 g
-  - vanilla_extract      : 110.4 g
-  - yeast_dry            : 9.5 g
-  - yogurt_plain         : 23.3 g
-
-=== TOP 5 (final eval) ===
-             id          name  valid problems  pairing_score  soft_rules_score  flavor_score  ratio_score  novelty_score  simplicity_score  fitness
-child_888821955 cookie_153618   True                   0.648             0.888         0.792        0.739          0.143               1.0    0.708
-child_993701727 cookie_865268   True                   0.634             0.888         0.786        0.752          0.167               1.0    0.708
-child_989209790 cookie_318620   True                   0.634             0.888         0.786        0.751          0.167               1.0    0.708
-child_342135123 cookie_387644   True                   0.634             0.888         0.786        0.751          0.167               1.0    0.708
-child_599640476 cookie_557311   True                   0.634             0.888         0.786        0.750          0.167               1.0    0.708
-
-Saved: run_output.csv
+  - sugar_brown          : 267.5 g
+  - sugar_white          : 21.6 g
+  - vanilla_extract      : 12.0 g
+  - white_chocolate      : 2.1 g
+Rank     : 2
+Name     : cookie_371830
+ID       : child_724196164
+Category : cookie
+Fitness  : 0.7651
+Ingredients (g):
+  - baking_powder        : 3.6 g
+  - baking_soda          : 4.6 g
+  - butter_unsalted      : 199.9 g
+  - buttermilk           : 25.4 g
+  - cream_cheese         : 30.5 g
+  - egg_whole            : 53.6 g
+  - flour_ap             : 225.4 g
+  - nuts_walnut          : 6.2 g
+  - salt_fine            : 4.6 g
+  - spice_nutmeg         : 5.5 g
+  - sugar_brown          : 229.4 g
+  - sugar_white          : 20.0 g
+  - vanilla_extract      : 9.3 g
+Rank     : 3
+Name     : cookie_130285
+ID       : child_58017731
+Category : cookie
+Fitness  : 0.7552
+Ingredients (g):
+  - baking_powder        : 3.7 g
+  - baking_soda          : 5.7 g
+  - butter_unsalted      : 206.5 g
+  - buttermilk           : 21.0 g
+  - cream_cheese         : 44.3 g
+  - egg_whole            : 45.3 g
+  - flour_ap             : 262.1 g
+  - molasses             : 8.3 g
+  - salt_fine            : 5.0 g
+  - strawberries_diced   : 8.1 g
+  - sugar_brown          : 251.3 g
+  - vanilla_extract      : 12.0 g
+  - white_chocolate      : 1.8 g
+Rank     : 4
+Name     : cookie_810115
+ID       : child_322811543
+Category : cookie
+Fitness  : 0.7125
+Ingredients (g):
+  - baking_powder        : 4.5 g
+  - baking_soda          : 7.8 g
+  - butter_unsalted      : 252.7 g
+  - buttermilk           : 27.6 g
+  - cream_cheese         : 35.0 g
+  - egg_whole            : 64.6 g
+  - flour_ap             : 286.1 g
+  - oil_olive            : 17.4 g
+  - salt_fine            : 5.8 g
+  - sugar_brown          : 271.4 g
+  - vanilla_extract      : 12.0 g
+Rank     : 5
+Name     : cookie_655916
+ID       : child_889911923
+Category : cookie
+Fitness  : 0.7435
+Ingredients (g):
+  - baking_powder        : 5.0 g
+  - baking_soda          : 5.2 g
+  - butter_unsalted      : 190.9 g
+  - buttermilk           : 18.9 g
+  - egg_whole            : 51.8 g
+  - flour_ap             : 224.2 g
+  - nuts_pecan           : 0.9 g
+  - salt_fine            : 4.1 g
+  - sugar_brown          : 222.0 g
+  - sugar_white          : 18.8 g
+  - vanilla_extract      : 8.0 g
+  - white_chocolate      : 1.3 g
 
 Process finished with exit code 0
