@@ -13879,5 +13879,89 @@
     "pairing_count": "1",
     "avg_rating": 0.0,
     "avg_success": "0"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "strawberry",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.97"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "chocolate",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.97"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "coffee",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.96"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "lemon",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.96"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "vanilla",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.96"
+  },
+  {
+    "flavor": "cream",
+    "flavor2": "caramel",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "strawberry",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "lemon",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "blackberry",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "chocolate",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "honey",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
+  },
+  {
+    "flavor": "herbal",
+    "flavor2": "orange",
+    "pairing_count": "1",
+    "avg_rating": 4.0,
+    "avg_success": "0.95"
   }
 ]

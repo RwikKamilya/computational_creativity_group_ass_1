@@ -1,45 +1,59 @@
 {
   "version": "0.1.0",
-  "units": {
-    "mass": "g",
-    "egg_unit_g": 50
-  },
-
   "categories": [
     {
       "id": "cookie",
       "name": "Cookie",
-      "required_ingredients": ["butter_unsalted", "egg_whole"],
-      "required_roles": ["base", "fat", "binder", "sweetener"],
-      "optional_roles": ["riser", "flavor", "salt", "inclusion"],
+      "required_ingredients": [
+        "butter_unsalted",
+        "egg_whole"
+      ],
+      "required_roles": [
+        "base",
+        "fat",
+        "binder",
+        "sweetener"
+      ],
+      "optional_roles": [
+        "riser",
+        "flavor",
+        "salt",
+        "inclusion"
+      ],
       "ratio_constraints": {
-        "base": { "min": 0.30, "max": 0.60 },
-        "fat": { "min": 0.15, "max": 0.35 },
-        "sweetener": { "min": 0.15, "max": 0.35 },
-        "binder": { "min": 0.05, "max": 0.15 },
-        "riser": { "min": 0.003, "max": 0.02 },
-        "salt": { "min": 0.002, "max": 0.01 }
+        "base": {
+          "min": 0.20,
+          "max": 0.60
+        },
+        "fat": {
+          "min": 0.15,
+          "max": 0.35
+        },
+        "sweetener": {
+          "min": 0.15,
+          "max": 0.35
+        },
+        "binder": {
+          "min": 0.05,
+          "max": 0.15
+        },
+        "riser": {
+          "min": 0.003,
+          "max": 0.02
+        },
+        "salt": {
+          "min": 0.002,
+          "max": 0.01
+        }
       },
-      "size_constraints": { "total_mass_g": { "min": 300, "max": 1200 } }
-    },
-    {
-      "id": "cake",
-      "name": "Cake",
-      "required_roles": ["base", "fat", "binder", "sweetener", "liquid", "riser"],
-      "optional_roles": ["flavor", "salt", "inclusion"],
-      "ratio_constraints": {
-        "base": { "min": 0.25, "max": 0.50 },
-        "fat": { "min": 0.12, "max": 0.28 },
-        "sweetener": { "min": 0.18, "max": 0.35 },
-        "binder": { "min": 0.08, "max": 0.18 },
-        "liquid": { "min": 0.12, "max": 0.30 },
-        "riser": { "min": 0.005, "max": 0.02 },
-        "salt": { "min": 0.002, "max": 0.01 }
-      },
-      "size_constraints": { "total_mass_g": { "min": 600, "max": 2000 } }
+      "size_constraints": {
+        "total_mass_g": {
+          "min": 300,
+          "max": 1200
+        }
+      }
     }
   ],
-
   "roles": {
     "base": "Provides starch/structure",
     "fat": "Tenderizes, binds, carries flavor",
@@ -51,16 +65,360 @@
     "flavor": "Aromatics/spices/extracts",
     "inclusion": "Chunks/mix-ins (chips, nuts, oats)"
   },
-
   "validity": {
     "hard_rules": [
-      { "id": "cookie_must_have_butter_and_egg", "category": "cookie", "type": "requires_all_ingredients", "ingredients": ["butter_unsalted", "egg_whole"] },
-      { "id": "no_dual_risers", "type": "max_role_count", "role": "riser", "max": 1 },
-      { "id": "at_least_one_flavor", "type": "min_role_count_any", "roles": ["flavor", "inclusion"], "min": 1 }
+      {
+        "id": "creaming_requires_fat",
+        "category": "cookie",
+        "type": "min_role_count",
+        "role": "fat",
+        "min": 1
+      },
+      {
+        "id": "creaming_requires_crystalline_sugar",
+        "category": "cookie",
+        "type": "requires_any_ingredients",
+        "ingredients": [
+          "sugar_white",
+          "sugar_brown"
+        ]
+      },
+      {
+        "id": "creaming_fat_must_be_creamable",
+        "category": "cookie",
+        "type": "requires_any_ingredients",
+        "ingredients": [
+          "butter_unsalted"
+        ]
+      },
+      {
+        "id": "binder_required_for_template",
+        "category": "cookie",
+        "type": "min_role_count",
+        "role": "binder",
+        "min": 1
+      },
+      {
+        "id": "must_have_base_flour",
+        "category": "cookie",
+        "type": "min_role_count",
+        "role": "base",
+        "min": 1
+      },
+      {
+        "id": "no_dual_risers",
+        "category": "cookie",
+        "type": "max_role_count",
+        "role": "riser",
+        "max": 1
+      },
+      {
+        "id": "leavener_caps_per_flour",
+        "category": "cookie",
+        "type": "max_leavener_equiv_per_cup_flour",
+        "baking_powder_tsp_per_cup_flour_max": 1.25,
+        "baking_soda_tsp_per_cup_flour_max": 0.60
+      },
+      {
+        "id": "at_least_one_flavor_or_inclusion",
+        "category": "cookie",
+        "type": "min_role_count_any",
+        "roles": [
+          "flavor",
+          "inclusion"
+        ],
+        "min": 1
+      }
     ],
     "soft_rules": [
-      { "id": "prefer_brown_sugar_with_chocolate", "type": "pair_preference", "if_any": ["cocoa_powder", "chocolate_chips"], "prefer": ["sugar_brown"], "weight": 0.1 },
-      { "id": "oat_loves_warm_spice", "type": "tag_preference", "ingredient": "oats_rolled", "note": "warm_spice", "weight": 0.1 }
+      {
+        "id": "salt_is_strongly_preferred",
+        "category": "cookie",
+        "type": "ingredient_preference",
+        "prefer": [
+          "salt_fine"
+        ],
+        "weight": 0.20,
+        "rationale": "Under-salting is a common cause of bland cookies."
+      },
+      {
+        "id": "ratio_sugar_to_flour_target_tastier",
+        "category": "cookie",
+        "type": "ratio_preference",
+        "numerator_role": "sweetener",
+        "denominator_role": "base",
+        "target_range": [
+          0.90,
+          1.30
+        ],
+        "weight": 0.18,
+        "rationale": "Sweeter band for cookies; pushes away from bread-like bases."
+      },
+      {
+        "id": "ratio_fat_to_flour_target_tastier",
+        "category": "cookie",
+        "type": "ratio_preference",
+        "numerator_role": "fat",
+        "denominator_role": "base",
+        "target_range": [
+          0.70,
+          1.00
+        ],
+        "weight": 0.16,
+        "rationale": "Richer fat band improves flavor delivery and tenderness."
+      },
+      {
+        "id": "prefer_single_leavener_unless_acid_present",
+        "category": "cookie",
+        "type": "structure_preference",
+        "penalty": 0.15,
+        "unless_any": [
+          "buttermilk",
+          "yogurt_plain",
+          "sour_cream",
+          "vinegar_cider",
+          "molasses",
+          "cocoa_powder"
+        ],
+        "rationale": "Avoids puffed, cakey cookies unless there’s a pH reason."
+      },
+      {
+        "id": "brown_sugar_pairs_with_chocolate",
+        "category": "cookie",
+        "type": "pair_preference",
+        "if_any": [
+          "cocoa_powder",
+          "chocolate_chips",
+          "chocolate_dark",
+          "chocolate_milk"
+        ],
+        "prefer": [
+          "sugar_brown"
+        ],
+        "weight": 0.16,
+        "rationale": "Molasses + chocolate -> deeper Maillard and rounder flavor."
+      },
+      {
+        "id": "vanilla_boosts_chocolate_and_spice",
+        "category": "cookie",
+        "type": "pair_preference",
+        "if_any": [
+          "cocoa_powder",
+          "chocolate_chips",
+          "spice_cinnamon",
+          "spice_ginger",
+          "spice_cardamom"
+        ],
+        "prefer": [
+          "vanilla_extract"
+        ],
+        "weight": 0.10
+      },
+      {
+        "id": "avoid_all_white_sugar",
+        "category": "cookie",
+        "type": "structure_preference",
+        "penalty": 0.10,
+        "when_all": [
+          "sugar_white"
+        ],
+        "unless_any": [
+          "sugar_brown",
+          "molasses"
+        ],
+        "rationale": "White-only sweetness reads flat; encourage some brown sugar."
+      },
+      {
+        "id": "oats_like_warm_spice",
+        "category": "cookie",
+        "type": "tag_preference",
+        "ingredient": "oats_rolled",
+        "note": "warm_spice",
+        "weight": 0.10
+      },
+      {
+        "id": "limit_free_liquid_for_creaming_tighter",
+        "category": "cookie",
+        "type": "ratio_preference",
+        "numerator_role": "liquid",
+        "denominator_role": "base",
+        "target_range": [
+          0.00,
+          0.20
+        ],
+        "weight": 0.10,
+        "rationale": "Keeps dough from turning cake-like or dulling flavor."
+      },
+      {
+        "id": "require_character_ingredient",
+        "category": "cookie",
+        "type": "threshold_preference",
+        "any_of": [
+          "chocolate_chips",
+          "cocoa_powder",
+          "peanut_butter",
+          "tahini",
+          "spice_cinnamon",
+          "spice_ginger",
+          "spice_cardamom",
+          "nut_walnut",
+          "nut_pecan",
+          "nut_hazelnut",
+          "vanilla_extract",
+          "espresso_powder",
+          "miso",
+          "lemon_zest",
+          "orange_zest",
+          "toffee_bits"
+        ],
+        "min_grams": 8,
+        "weight": 0.14,
+        "rationale": "Cookies should have at least one distinct flavor driver."
+      },
+      {
+        "id": "flavor_diversity_midrange",
+        "category": "cookie",
+        "type": "diversity_preference",
+        "roles_considered": [
+          "chocolate",
+          "spice",
+          "nut",
+          "aromatic",
+          "mix_in"
+        ],
+        "target_effective_count_range": [
+          2,
+          4
+        ],
+        "ignore_roles": [
+          "base",
+          "egg",
+          "liquid"
+        ],
+        "weight": 0.12,
+        "rationale": "Reward 2–4 distinct flavor roles: not one-note, not muddy."
+      },
+      {
+        "id": "maillard_synergy_bonus",
+        "category": "cookie",
+        "type": "pair_preference",
+        "if_any": [
+          "sugar_brown"
+        ],
+        "prefer": [
+          "butter_unsalted",
+          "baking_soda"
+        ],
+        "weight": 0.08,
+        "rationale": "Brown sugar + butter + a bit of soda -> deeper browning."
+      },
+      {
+        "id": "chill_dough_for_better_structure",
+        "category": "cookie",
+        "type": "process_preference",
+        "min_chill_minutes": 30,
+        "ideal_chill_hours": 12,
+        "weight": 0.08
+      },
+      {
+        "id": "mix_dry_just_to_combine",
+        "category": "cookie",
+        "type": "process_preference",
+        "avoid_overmixing_after_dry": true,
+        "weight": 0.06
+      },
+      {
+        "id": "salt_required_min",
+        "category": "cookie",
+        "type": "threshold_preference",
+        "any_of": [
+          "salt_fine"
+        ],
+        "min_grams": 1.0,
+        "weight": 0.35,
+        "rationale": "Salt is non-negotiable for flavor balance."
+      },
+      {
+        "id": "vanilla_preferred",
+        "category": "cookie",
+        "type": "threshold_preference",
+        "any_of": [
+          "vanilla_extract"
+        ],
+        "min_grams": 1.0,
+        "weight": 0.20,
+        "rationale": "Vanilla boosts perceived sweetness and complexity."
+      },
+      {
+        "id": "brown_sugar_when_chocolate",
+        "category": "cookie",
+        "type": "pair_preference",
+        "if_any": [
+          "cocoa_powder",
+          "chocolate_chips"
+        ],
+        "prefer": [
+          "sugar_brown"
+        ],
+        "weight": 0.25
+      },
+      {
+        "id": "character_diversity",
+        "category": "cookie",
+        "type": "diversity_preference",
+        "roles_considered": [
+          "spice",
+          "chocolate",
+          "extract",
+          "nut",
+          "fruit",
+          "inclusion"
+        ],
+        "ignore_roles": [],
+        "target_effective_count_range": [
+          1,
+          3
+        ],
+        "weight": 0.25,
+        "rationale": "1–3 character elements gives identity without clutter."
+      },
+      {
+        "id": "sugar_profile_split",
+        "category": "cookie",
+        "type": "ratio_preference",
+        "numerator_role": "sweetener_brown",
+        "denominator_role": "sweetener_total",
+        "target_range": [
+          0.3,
+          0.7
+        ],
+        "weight": 0.15
+      },
+      {
+        "id": "limit_free_liquid_for_creaming",
+        "category": "cookie",
+        "type": "ratio_preference",
+        "numerator_role": "liquid",
+        "denominator_role": "base",
+        "target_range": [
+          0.00,
+          0.20
+        ],
+        "weight": 0.10
+      }
+    ]
+  },
+  "method_templates": {
+    "cream_fat_sugar_add_eggs_add_dry_fold_inclusions": [
+      "Cream butter and sugars until light.",
+      "Beat in eggs and vanilla.",
+      "Whisk dry ingredients; add to bowl, mixing just to combine.",
+      "Fold inclusions (chips, oats, etc.).",
+      "Scoop, chill if desired, bake."
     ]
   }
 }
+
+
+
+
