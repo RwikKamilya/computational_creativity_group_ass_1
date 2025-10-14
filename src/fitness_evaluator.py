@@ -20,7 +20,6 @@ import json
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
-
 Recipe = Dict[str, Any]  # expects keys: id, name, category, ingredients_g
 
 
@@ -31,12 +30,12 @@ class RecipeFitness:
     BASE_ROLES = {"base", "fat", "sweetener", "liquid", "binder"}
 
     def __init__(
-        self,
-        ingredients_index: Dict[str, dict],
-        overall_config: Dict[str, Any],
-        flavor_pairings: List[dict],
-        category_id: str = "cookie",
-        weights: Optional[Dict[str, float]] = None,
+            self,
+            ingredients_index: Dict[str, dict],
+            overall_config: Dict[str, Any],
+            flavor_pairings: List[dict],
+            category_id: str = "cookie",
+            weights: Optional[Dict[str, float]] = None,
     ) -> None:
         self.ING = ingredients_index
         self.CFG = overall_config
@@ -81,11 +80,11 @@ class RecipeFitness:
 
         # Aspect weights
         self.weights = weights or {
-            "flavor_score":     1.30,  # blended: 0.6*soft + 0.4*pairing
-            "pairing_score":    0.00,  # (keep 0 if using blended flavor_score)
+            "flavor_score": 1.30,  # blended: 0.6*soft + 0.4*pairing
+            "pairing_score": 0.00,  # (keep 0 if using blended flavor_score)
             "soft_rules_score": 0.00,
-            "ratio_score":      0.20,
-            "novelty_score":    0.02,
+            "ratio_score": 0.20,
+            "novelty_score": 0.02,
             "simplicity_score": 0.00,
         }
 
@@ -96,12 +95,12 @@ class RecipeFitness:
 
     @classmethod
     def from_files(
-        cls,
-        ingredients_path: str,
-        overall_cfg_path: str,
-        flavor_pairings_path: str,
-        category_id: str = "cookie",
-        weights: Optional[Dict[str, float]] = None,
+            cls,
+            ingredients_path: str,
+            overall_cfg_path: str,
+            flavor_pairings_path: str,
+            category_id: str = "cookie",
+            weights: Optional[Dict[str, float]] = None,
     ) -> "RecipeFitness":
         with open(ingredients_path, "r") as f:
             ING = json.load(f)
@@ -204,7 +203,7 @@ class RecipeFitness:
 
     def flavor_pairing_score(self, ingredients_g: Dict[str, float]) -> float:
         ing_list = sorted(ingredients_g.keys())
-        character_roles = {"spice", "chocolate", "extract", "nut", "fruit", "inclusion"}
+        character_roles = {"flavor", "inclusion"}
 
         pairs: List[Tuple[str, str, float]] = []
         for i in range(len(ing_list)):
@@ -212,7 +211,9 @@ class RecipeFitness:
                 ki, kj = ing_list[i], ing_list[j]
                 roles_i = set(self.ING_ROLES.get(ki, []))
                 roles_j = set(self.ING_ROLES.get(kj, []))
-                w = 1.5 if ((roles_i | roles_j) & character_roles) else 1.0
+                #
+                w = 1.5 if ((roles_i | roles_j) & character_roles) else 0.1
+                # w = 1.5 if ((roles_i | roles_j) & character_roles) else 1.0
 
                 for a in self.ING_FLAVORS.get(ki, []):
                     for b in self.ING_FLAVORS.get(kj, []):

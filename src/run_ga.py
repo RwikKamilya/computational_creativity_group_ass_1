@@ -81,7 +81,7 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--category", default="cookie")
 
     ap.add_argument("--population", type=int, default=80)
-    ap.add_argument("--generations", type=int, default=300)
+    ap.add_argument("--generations", type=int, default=3000)
     ap.add_argument("--seed", type=int, default=7)
 
     ap.add_argument("--save-csv", type=str, default="run_output.csv")
@@ -104,12 +104,12 @@ def main() -> None:
         flavor_pairings_path=args.pairings,
         category_id=args.category,
         weights={
-            "flavor_score":     1.30,   # blended flavor: 0.6*soft + 0.4*pairing
-            "pairing_score":    0.20,   # keep 0 unless you want an extra term
-            "soft_rules_score": 0.20,   # keep 0 unless you want separate accounting
-            "ratio_score":      0.20,
-            "novelty_score":    0.20,
-            "simplicity_score": 0.00,
+            "flavor_score":     0.0,   # blended flavor: 0.6*soft + 0.4*pairing
+            "pairing_score":    0.25,   # keep 0 unless you want an extra term
+            "soft_rules_score": 0.25,   # keep 0 unless you want separate accounting
+            "ratio_score":      0.25,
+            "novelty_score":    0.25,
+            "simplicity_score": 0.0,
         },
     )
 
