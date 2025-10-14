@@ -1,0 +1,52 @@
+[Gen 280] best=0.7099  mean=0.4366
+[Gen 281] best=0.7099  mean=0.4105
+[Gen 282] best=0.7099  mean=0.4345
+[Gen 283] best=0.7078  mean=0.4246
+[Gen 284] best=0.7078  mean=0.4169
+[Gen 285] best=0.7078  mean=0.4170
+[Gen 286] best=0.7084  mean=0.4071
+[Gen 287] best=0.7110  mean=0.4073
+[Gen 288] best=0.7084  mean=0.3674
+[Gen 289] best=0.7084  mean=0.3950
+[Gen 290] best=0.7084  mean=0.3732
+[Gen 291] best=0.7084  mean=0.4221
+[Gen 292] best=0.7084  mean=0.4067
+[Gen 293] best=0.7110  mean=0.4320
+[Gen 294] best=0.7110  mean=0.4220
+[Gen 295] best=0.7110  mean=0.4037
+[Gen 296] best=0.7084  mean=0.3920
+[Gen 297] best=0.7110  mean=0.3587
+[Gen 298] best=0.7110  mean=0.3278
+[Gen 299] best=0.7084  mean=0.3686
+[Gen 300] best=0.7084  mean=0.4026
+
+=== BEST RECIPE ===
+Name     : cookie_153618
+ID       : child_888821955
+Category : cookie
+Fitness  : 0.711
+Ingredients (g):
+  - butter_unsalted      : 136.8 g
+  - cocoa_powder         : 119.4 g
+  - egg_whole            : 72.6 g
+  - flour_ap             : 122.1 g
+  - herb_lavender        : 10.0 g
+  - peanut_butter        : 70.2 g
+  - salt_fine            : 5.6 g
+  - sugar_brown          : 110.7 g
+  - sugar_white          : 154.9 g
+  - vanilla_extract      : 110.4 g
+  - yeast_dry            : 9.5 g
+  - yogurt_plain         : 23.3 g
+
+=== TOP 5 (final eval) ===
+             id          name  valid problems  pairing_score  soft_rules_score  flavor_score  ratio_score  novelty_score  simplicity_score  fitness
+child_888821955 cookie_153618   True                   0.648             0.888         0.792        0.739          0.143               1.0    0.708
+child_993701727 cookie_865268   True                   0.634             0.888         0.786        0.752          0.167               1.0    0.708
+child_989209790 cookie_318620   True                   0.634             0.888         0.786        0.751          0.167               1.0    0.708
+child_342135123 cookie_387644   True                   0.634             0.888         0.786        0.751          0.167               1.0    0.708
+child_599640476 cookie_557311   True                   0.634             0.888         0.786        0.750          0.167               1.0    0.708
+
+Saved: run_output.csv
+
+Process finished with exit code 0
