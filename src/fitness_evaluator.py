@@ -105,7 +105,7 @@ class RecipeFitness:
         ing = recipe.get("ingredients_g", {})
         valid, problems = self.recipe_validity(ing)
 
-        pairing = self.flavor_pairing_score(ing)
+        pairing = self.pairing_score(ing)
         soft = self.soft_rules_score(ing)
         flavor = 0.4 * pairing + 0.6 * soft  # let soft rules steer, pairings refine
 
@@ -180,7 +180,7 @@ class RecipeFitness:
 
     # ---------- Flavor pairing ----------
 
-    def flavor_pairing_score(self, ingredients_g: Dict[str, float]) -> float:
+    def pairing_score(self, ingredients_g: Dict[str, float]) -> float:
         ing_list = sorted(ingredients_g.keys())
         character_roles = {"flavor", "inclusion"}
 
@@ -190,9 +190,7 @@ class RecipeFitness:
                 ki, kj = ing_list[i], ing_list[j]
                 roles_i = set(self.ING_ROLES.get(ki, []))
                 roles_j = set(self.ING_ROLES.get(kj, []))
-                #
                 w = 1.5 if ((roles_i | roles_j) & character_roles) else 0.1
-                # w = 1.5 if ((roles_i | roles_j) & character_roles) else 1.0
 
                 for a in self.ING_FLAVORS.get(ki, []):
                     for b in self.ING_FLAVORS.get(kj, []):
