@@ -1,122 +1,641 @@
-[Gen 2980] best=0.7992  mean=0.6889
-[Gen 2981] best=0.7992  mean=0.6977
-[Gen 2982] best=0.7992  mean=0.6697
-[Gen 2983] best=0.7992  mean=0.7006
-[Gen 2984] best=0.7992  mean=0.7163
-[Gen 2985] best=0.7992  mean=0.7055
-[Gen 2986] best=0.7992  mean=0.6946
-[Gen 2987] best=0.7992  mean=0.6950
-[Gen 2988] best=0.7992  mean=0.6719
-[Gen 2989] best=0.7992  mean=0.7119
-[Gen 2990] best=0.7992  mean=0.6757
-[Gen 2991] best=0.7992  mean=0.7086
-[Gen 2992] best=0.7992  mean=0.6790
-[Gen 2993] best=0.7992  mean=0.6744
-[Gen 2994] best=0.7992  mean=0.6630
-[Gen 2995] best=0.7992  mean=0.6918
-[Gen 2996] best=0.7992  mean=0.6884
-[Gen 2997] best=0.7992  mean=0.6960
-[Gen 2998] best=0.7992  mean=0.6818
-[Gen 2999] best=0.7992  mean=0.6828
-[Gen 3000] best=0.7992  mean=0.6859
+"/Users/rwikkamilya/MSc/Computational Creativity/computational_creativity_group_ass_1/.venv/bin/python" /Users/rwikkamilya/MSc/Computational Creativity/computational_creativity_group_ass_1/src/run_ga.py 
+[Gen 1] best=0.5387  mean=0.4239
+[Gen 2] best=0.5401  mean=0.4134
+[Gen 3] best=0.5743  mean=0.4417
+[Gen 4] best=0.5919  mean=0.4702
+[Gen 5] best=0.5926  mean=0.4960
+[Gen 6] best=0.6113  mean=0.5075
+[Gen 7] best=0.6148  mean=0.5307
+[Gen 8] best=0.6630  mean=0.5265
+[Gen 9] best=0.6630  mean=0.5636
+[Gen 10] best=0.6630  mean=0.5254
+[Gen 11] best=0.6683  mean=0.5482
+[Gen 12] best=0.6787  mean=0.5627
+[Gen 13] best=0.6887  mean=0.5889
+[Gen 14] best=0.7338  mean=0.5898
+[Gen 15] best=0.7819  mean=0.6095
+[Gen 16] best=0.7819  mean=0.5788
+[Gen 17] best=0.7819  mean=0.5995
+[Gen 18] best=0.7819  mean=0.6036
+[Gen 19] best=0.7819  mean=0.6188
+[Gen 20] best=0.7819  mean=0.5633
+[Gen 21] best=0.7876  mean=0.6266
+[Gen 22] best=0.7876  mean=0.6316
+[Gen 23] best=0.7876  mean=0.6180
+[Gen 24] best=0.7876  mean=0.5875
+[Gen 25] best=0.7876  mean=0.6184
+[Gen 26] best=0.7876  mean=0.5342
+[Gen 27] best=0.7876  mean=0.6228
+[Gen 28] best=0.7885  mean=0.5741
+[Gen 29] best=0.7885  mean=0.6372
+[Gen 30] best=0.7916  mean=0.6063
+[Gen 31] best=0.7916  mean=0.5961
+[Gen 32] best=0.7916  mean=0.5887
+[Gen 33] best=0.7916  mean=0.5983
+[Gen 34] best=0.7916  mean=0.6343
+[Gen 35] best=0.7916  mean=0.6892
+[Gen 36] best=0.7916  mean=0.6247
+[Gen 37] best=0.7916  mean=0.6261
+[Gen 38] best=0.7916  mean=0.5473
+[Gen 39] best=0.7916  mean=0.5567
+[Gen 40] best=0.7916  mean=0.6084
+[Gen 41] best=0.7916  mean=0.6344
+[Gen 42] best=0.7922  mean=0.6260
+[Gen 43] best=0.7922  mean=0.6418
+[Gen 44] best=0.7922  mean=0.5852
+[Gen 45] best=0.7922  mean=0.5258
+[Gen 46] best=0.7922  mean=0.5744
+[Gen 47] best=0.7922  mean=0.5959
+[Gen 48] best=0.7922  mean=0.6272
+[Gen 49] best=0.7922  mean=0.6200
+[Gen 50] best=0.7922  mean=0.5622
+[Gen 51] best=0.7922  mean=0.6306
+[Gen 52] best=0.7922  mean=0.6140
+[Gen 53] best=0.7922  mean=0.5576
+[Gen 54] best=0.7958  mean=0.6140
+[Gen 55] best=0.7958  mean=0.6111
+[Gen 56] best=0.7958  mean=0.5814
+[Gen 57] best=0.7958  mean=0.6090
+[Gen 58] best=0.7958  mean=0.6194
+[Gen 59] best=0.7958  mean=0.6278
+[Gen 60] best=0.7958  mean=0.6352
+[Gen 61] best=0.7958  mean=0.5951
+[Gen 62] best=0.7966  mean=0.6217
+[Gen 63] best=0.7966  mean=0.5886
+[Gen 64] best=0.7966  mean=0.6544
+[Gen 65] best=0.7969  mean=0.6318
+[Gen 66] best=0.7969  mean=0.6447
+[Gen 67] best=0.7969  mean=0.6634
+[Gen 68] best=0.7969  mean=0.6312
+[Gen 69] best=0.7979  mean=0.6031
+[Gen 70] best=0.7987  mean=0.6106
+[Gen 71] best=0.7987  mean=0.6245
+[Gen 72] best=0.7987  mean=0.6519
+[Gen 73] best=0.7987  mean=0.6486
+[Gen 74] best=0.7987  mean=0.6407
+[Gen 75] best=0.7987  mean=0.6258
+[Gen 76] best=0.7987  mean=0.6382
+[Gen 77] best=0.7987  mean=0.6347
+[Gen 78] best=0.7987  mean=0.6562
+[Gen 79] best=0.7994  mean=0.5718
+[Gen 80] best=0.7994  mean=0.6320
+[Gen 81] best=0.7994  mean=0.6316
+[Gen 82] best=0.7994  mean=0.6362
+[Gen 83] best=0.7994  mean=0.6409
+[Gen 84] best=0.7994  mean=0.6276
+[Gen 85] best=0.7994  mean=0.6239
+[Gen 86] best=0.7994  mean=0.6490
+[Gen 87] best=0.7994  mean=0.6350
+[Gen 88] best=0.7994  mean=0.5716
+[Gen 89] best=0.8043  mean=0.5721
+[Gen 90] best=0.8043  mean=0.5998
+[Gen 91] best=0.8043  mean=0.5896
+[Gen 92] best=0.8043  mean=0.5714
+[Gen 93] best=0.8043  mean=0.6646
+[Gen 94] best=0.8043  mean=0.6338
+[Gen 95] best=0.8043  mean=0.6544
+[Gen 96] best=0.8043  mean=0.6342
+[Gen 97] best=0.8043  mean=0.6232
+[Gen 98] best=0.8043  mean=0.6618
+[Gen 99] best=0.8091  mean=0.6328
+[Gen 100] best=0.8091  mean=0.6324
+[Gen 101] best=0.8091  mean=0.6417
+[Gen 102] best=0.8091  mean=0.6484
+[Gen 103] best=0.8091  mean=0.6644
+[Gen 104] best=0.8091  mean=0.6519
+[Gen 105] best=0.8091  mean=0.6332
+[Gen 106] best=0.8091  mean=0.6188
+[Gen 107] best=0.8091  mean=0.6095
+[Gen 108] best=0.8091  mean=0.6080
+[Gen 109] best=0.8107  mean=0.5941
+[Gen 110] best=0.8107  mean=0.6521
+[Gen 111] best=0.8107  mean=0.6560
+[Gen 112] best=0.8107  mean=0.6252
+[Gen 113] best=0.8107  mean=0.6377
+[Gen 114] best=0.8107  mean=0.6401
+[Gen 115] best=0.8114  mean=0.6409
+[Gen 116] best=0.8114  mean=0.6150
+[Gen 117] best=0.8114  mean=0.6655
+[Gen 118] best=0.8114  mean=0.6170
+[Gen 119] best=0.8114  mean=0.6023
+[Gen 120] best=0.8114  mean=0.6445
+[Gen 121] best=0.8114  mean=0.5972
+[Gen 122] best=0.8114  mean=0.6039
+[Gen 123] best=0.8114  mean=0.6332
+[Gen 124] best=0.8114  mean=0.6057
+[Gen 125] best=0.8117  mean=0.6327
+[Gen 126] best=0.8117  mean=0.6482
+[Gen 127] best=0.8117  mean=0.6130
+[Gen 128] best=0.8117  mean=0.6121
+[Gen 129] best=0.8117  mean=0.6035
+[Gen 130] best=0.8117  mean=0.6100
+[Gen 131] best=0.8117  mean=0.6332
+[Gen 132] best=0.8117  mean=0.6162
+[Gen 133] best=0.8117  mean=0.6513
+[Gen 134] best=0.8117  mean=0.6307
+[Gen 135] best=0.8117  mean=0.6495
+[Gen 136] best=0.8117  mean=0.6677
+[Gen 137] best=0.8117  mean=0.6353
+[Gen 138] best=0.8117  mean=0.6067
+[Gen 139] best=0.8117  mean=0.6225
+[Gen 140] best=0.8117  mean=0.6149
+[Gen 141] best=0.8117  mean=0.6261
+[Gen 142] best=0.8117  mean=0.6322
+[Gen 143] best=0.8117  mean=0.6283
+[Gen 144] best=0.8117  mean=0.5742
+[Gen 145] best=0.8117  mean=0.6240
+[Gen 146] best=0.8117  mean=0.6143
+[Gen 147] best=0.8117  mean=0.6556
+[Gen 148] best=0.8117  mean=0.6445
+[Gen 149] best=0.8117  mean=0.5844
+[Gen 150] best=0.8117  mean=0.6486
+[Gen 151] best=0.8117  mean=0.6205
+[Gen 152] best=0.8117  mean=0.6048
+[Gen 153] best=0.8117  mean=0.6089
+[Gen 154] best=0.8117  mean=0.6007
+[Gen 155] best=0.8117  mean=0.5381
+[Gen 156] best=0.8130  mean=0.6396
+[Gen 157] best=0.8130  mean=0.6053
+[Gen 158] best=0.8130  mean=0.6181
+[Gen 159] best=0.8130  mean=0.6196
+[Gen 160] best=0.8161  mean=0.5859
+[Gen 161] best=0.8161  mean=0.6369
+[Gen 162] best=0.8161  mean=0.6402
+[Gen 163] best=0.8161  mean=0.6207
+[Gen 164] best=0.8161  mean=0.6670
+[Gen 165] best=0.8161  mean=0.6020
+[Gen 166] best=0.8161  mean=0.6130
+[Gen 167] best=0.8161  mean=0.6233
+[Gen 168] best=0.8161  mean=0.6200
+[Gen 169] best=0.8161  mean=0.6434
+[Gen 170] best=0.8161  mean=0.6598
+[Gen 171] best=0.8180  mean=0.6150
+[Gen 172] best=0.8180  mean=0.5877
+[Gen 173] best=0.8180  mean=0.6697
+[Gen 174] best=0.8180  mean=0.6356
+[Gen 175] best=0.8180  mean=0.6011
+[Gen 176] best=0.8180  mean=0.6085
+[Gen 177] best=0.8180  mean=0.6267
+[Gen 178] best=0.8180  mean=0.6187
+[Gen 179] best=0.8180  mean=0.6618
+[Gen 180] best=0.8241  mean=0.5711
+[Gen 181] best=0.8241  mean=0.6570
+[Gen 182] best=0.8241  mean=0.6400
+[Gen 183] best=0.8241  mean=0.6309
+[Gen 184] best=0.8241  mean=0.6322
+[Gen 185] best=0.8241  mean=0.5912
+[Gen 186] best=0.8281  mean=0.6702
+[Gen 187] best=0.8281  mean=0.6650
+[Gen 188] best=0.8281  mean=0.6681
+[Gen 189] best=0.8281  mean=0.6887
+[Gen 190] best=0.8281  mean=0.6293
+[Gen 191] best=0.8281  mean=0.6481
+[Gen 192] best=0.8281  mean=0.6492
+[Gen 193] best=0.8281  mean=0.6412
+[Gen 194] best=0.8281  mean=0.6733
+[Gen 195] best=0.8281  mean=0.6227
+[Gen 196] best=0.8281  mean=0.6645
+[Gen 197] best=0.8281  mean=0.6702
+[Gen 198] best=0.8281  mean=0.6575
+[Gen 199] best=0.8281  mean=0.6619
+[Gen 200] best=0.8281  mean=0.6524
+[Gen 201] best=0.8281  mean=0.6600
+[Gen 202] best=0.8281  mean=0.6346
+[Gen 203] best=0.8281  mean=0.6522
+[Gen 204] best=0.8281  mean=0.6268
+[Gen 205] best=0.8281  mean=0.5707
+[Gen 206] best=0.8281  mean=0.6218
+[Gen 207] best=0.8281  mean=0.6701
+[Gen 208] best=0.8281  mean=0.6164
+[Gen 209] best=0.8281  mean=0.6111
+[Gen 210] best=0.8281  mean=0.6374
+[Gen 211] best=0.8281  mean=0.6173
+[Gen 212] best=0.8281  mean=0.6297
+[Gen 213] best=0.8281  mean=0.6511
+[Gen 214] best=0.8281  mean=0.6633
+[Gen 215] best=0.8281  mean=0.6305
+[Gen 216] best=0.8281  mean=0.6579
+[Gen 217] best=0.8281  mean=0.6309
+[Gen 218] best=0.8281  mean=0.6606
+[Gen 219] best=0.8281  mean=0.6410
+[Gen 220] best=0.8281  mean=0.6821
+[Gen 221] best=0.8281  mean=0.6173
+[Gen 222] best=0.8281  mean=0.6378
+[Gen 223] best=0.8281  mean=0.6957
+[Gen 224] best=0.8281  mean=0.6546
+[Gen 225] best=0.8281  mean=0.6525
+[Gen 226] best=0.8281  mean=0.6593
+[Gen 227] best=0.8281  mean=0.6570
+[Gen 228] best=0.8281  mean=0.7081
+[Gen 229] best=0.8281  mean=0.6487
+[Gen 230] best=0.8281  mean=0.6431
+[Gen 231] best=0.8281  mean=0.6655
+[Gen 232] best=0.8281  mean=0.6790
+[Gen 233] best=0.8281  mean=0.6693
+[Gen 234] best=0.8281  mean=0.6353
+[Gen 235] best=0.8281  mean=0.6037
+[Gen 236] best=0.8281  mean=0.6121
+[Gen 237] best=0.8281  mean=0.6045
+[Gen 238] best=0.8281  mean=0.6783
+[Gen 239] best=0.8281  mean=0.6137
+[Gen 240] best=0.8281  mean=0.5953
+[Gen 241] best=0.8281  mean=0.6333
+[Gen 242] best=0.8281  mean=0.6318
+[Gen 243] best=0.8281  mean=0.6829
+[Gen 244] best=0.8281  mean=0.6172
+[Gen 245] best=0.8281  mean=0.6384
+[Gen 246] best=0.8281  mean=0.6387
+[Gen 247] best=0.8281  mean=0.6494
+[Gen 248] best=0.8281  mean=0.6323
+[Gen 249] best=0.8281  mean=0.6728
+[Gen 250] best=0.8281  mean=0.6278
+[Gen 251] best=0.8281  mean=0.6380
+[Gen 252] best=0.8281  mean=0.6097
+[Gen 253] best=0.8281  mean=0.6338
+[Gen 254] best=0.8281  mean=0.6841
+[Gen 255] best=0.8281  mean=0.6629
+[Gen 256] best=0.8281  mean=0.6648
+[Gen 257] best=0.8281  mean=0.6671
+[Gen 258] best=0.8281  mean=0.6612
+[Gen 259] best=0.8281  mean=0.6334
+[Gen 260] best=0.8281  mean=0.6738
+[Gen 261] best=0.8281  mean=0.6020
+[Gen 262] best=0.8281  mean=0.6308
+[Gen 263] best=0.8289  mean=0.6397
+[Gen 264] best=0.8289  mean=0.6492
+[Gen 265] best=0.8292  mean=0.6771
+[Gen 266] best=0.8292  mean=0.6606
+[Gen 267] best=0.8292  mean=0.5795
+[Gen 268] best=0.8292  mean=0.6317
+[Gen 269] best=0.8292  mean=0.5836
+[Gen 270] best=0.8292  mean=0.6493
+[Gen 271] best=0.8292  mean=0.6485
+[Gen 272] best=0.8296  mean=0.6291
+[Gen 273] best=0.8296  mean=0.6081
+[Gen 274] best=0.8296  mean=0.6126
+[Gen 275] best=0.8296  mean=0.6231
+[Gen 276] best=0.8296  mean=0.5920
+[Gen 277] best=0.8296  mean=0.6746
+[Gen 278] best=0.8296  mean=0.6397
+[Gen 279] best=0.8296  mean=0.6101
+[Gen 280] best=0.8296  mean=0.5995
+[Gen 281] best=0.8296  mean=0.6471
+[Gen 282] best=0.8296  mean=0.6308
+[Gen 283] best=0.8296  mean=0.6133
+[Gen 284] best=0.8296  mean=0.6489
+[Gen 285] best=0.8296  mean=0.6039
+[Gen 286] best=0.8296  mean=0.6438
+[Gen 287] best=0.8296  mean=0.6515
+[Gen 288] best=0.8296  mean=0.6412
+[Gen 289] best=0.8296  mean=0.6861
+[Gen 290] best=0.8296  mean=0.6343
+[Gen 291] best=0.8296  mean=0.6067
+[Gen 292] best=0.8296  mean=0.6403
+[Gen 293] best=0.8304  mean=0.6325
+[Gen 294] best=0.8304  mean=0.6112
+[Gen 295] best=0.8304  mean=0.6221
+[Gen 296] best=0.8304  mean=0.6355
+[Gen 297] best=0.8304  mean=0.6532
+[Gen 298] best=0.8306  mean=0.6345
+[Gen 299] best=0.8306  mean=0.6288
+[Gen 300] best=0.8306  mean=0.6548
+[Gen 301] best=0.8306  mean=0.6324
+[Gen 302] best=0.8306  mean=0.6341
+[Gen 303] best=0.8311  mean=0.6175
+[Gen 304] best=0.8311  mean=0.5580
+[Gen 305] best=0.8311  mean=0.6493
+[Gen 306] best=0.8311  mean=0.6232
+[Gen 307] best=0.8311  mean=0.6672
+[Gen 308] best=0.8311  mean=0.6653
+[Gen 309] best=0.8311  mean=0.6285
+[Gen 310] best=0.8311  mean=0.6380
+[Gen 311] best=0.8311  mean=0.5952
+[Gen 312] best=0.8311  mean=0.6038
+[Gen 313] best=0.8311  mean=0.6802
+[Gen 314] best=0.8311  mean=0.5872
+[Gen 315] best=0.8311  mean=0.6161
+[Gen 316] best=0.8311  mean=0.6319
+[Gen 317] best=0.8311  mean=0.6656
+[Gen 318] best=0.8311  mean=0.6065
+[Gen 319] best=0.8311  mean=0.6824
+[Gen 320] best=0.8311  mean=0.6472
+[Gen 321] best=0.8311  mean=0.6558
+[Gen 322] best=0.8311  mean=0.6148
+[Gen 323] best=0.8311  mean=0.6114
+[Gen 324] best=0.8311  mean=0.6026
+[Gen 325] best=0.8311  mean=0.6066
+[Gen 326] best=0.8311  mean=0.6739
+[Gen 327] best=0.8311  mean=0.6745
+[Gen 328] best=0.8311  mean=0.5766
+[Gen 329] best=0.8311  mean=0.6191
+[Gen 330] best=0.8311  mean=0.6743
+[Gen 331] best=0.8311  mean=0.6570
+[Gen 332] best=0.8311  mean=0.6607
+[Gen 333] best=0.8311  mean=0.6710
+[Gen 334] best=0.8311  mean=0.6710
+[Gen 335] best=0.8311  mean=0.6493
+[Gen 336] best=0.8311  mean=0.6162
+[Gen 337] best=0.8311  mean=0.6117
+[Gen 338] best=0.8311  mean=0.6478
+[Gen 339] best=0.8311  mean=0.6284
+[Gen 340] best=0.8311  mean=0.6349
+[Gen 341] best=0.8311  mean=0.6695
+[Gen 342] best=0.8311  mean=0.6298
+[Gen 343] best=0.8311  mean=0.6577
+[Gen 344] best=0.8311  mean=0.6454
+[Gen 345] best=0.8311  mean=0.6273
+[Gen 346] best=0.8311  mean=0.6233
+[Gen 347] best=0.8311  mean=0.6721
+[Gen 348] best=0.8311  mean=0.6253
+[Gen 349] best=0.8311  mean=0.6447
+[Gen 350] best=0.8311  mean=0.6509
+[Gen 351] best=0.8311  mean=0.5824
+[Gen 352] best=0.8311  mean=0.6367
+[Gen 353] best=0.8311  mean=0.6172
+[Gen 354] best=0.8311  mean=0.6152
+[Gen 355] best=0.8311  mean=0.6364
+[Gen 356] best=0.8311  mean=0.6368
+[Gen 357] best=0.8311  mean=0.6048
+[Gen 358] best=0.8311  mean=0.5998
+[Gen 359] best=0.8311  mean=0.6400
+[Gen 360] best=0.8311  mean=0.6448
+[Gen 361] best=0.8311  mean=0.6467
+[Gen 362] best=0.8311  mean=0.6336
+[Gen 363] best=0.8320  mean=0.6824
+[Gen 364] best=0.8320  mean=0.6693
+[Gen 365] best=0.8320  mean=0.6455
+[Gen 366] best=0.8320  mean=0.6214
+[Gen 367] best=0.8320  mean=0.5894
+[Gen 368] best=0.8320  mean=0.6402
+[Gen 369] best=0.8320  mean=0.6311
+[Gen 370] best=0.8320  mean=0.6748
+[Gen 371] best=0.8320  mean=0.6585
+[Gen 372] best=0.8320  mean=0.6785
+[Gen 373] best=0.8320  mean=0.6645
+[Gen 374] best=0.8320  mean=0.6346
+[Gen 375] best=0.8320  mean=0.6892
+[Gen 376] best=0.8320  mean=0.6310
+[Gen 377] best=0.8320  mean=0.6486
+[Gen 378] best=0.8320  mean=0.6883
+[Gen 379] best=0.8320  mean=0.6524
+[Gen 380] best=0.8320  mean=0.6218
+[Gen 381] best=0.8320  mean=0.6707
+[Gen 382] best=0.8320  mean=0.6540
+[Gen 383] best=0.8320  mean=0.6564
+[Gen 384] best=0.8320  mean=0.6645
+[Gen 385] best=0.8320  mean=0.6623
+[Gen 386] best=0.8320  mean=0.6228
+[Gen 387] best=0.8320  mean=0.6449
+[Gen 388] best=0.8320  mean=0.6742
+[Gen 389] best=0.8320  mean=0.6389
+[Gen 390] best=0.8320  mean=0.6201
+[Gen 391] best=0.8320  mean=0.6820
+[Gen 392] best=0.8320  mean=0.6444
+[Gen 393] best=0.8320  mean=0.6303
+[Gen 394] best=0.8320  mean=0.6581
+[Gen 395] best=0.8320  mean=0.6265
+[Gen 396] best=0.8320  mean=0.6574
+[Gen 397] best=0.8320  mean=0.6474
+[Gen 398] best=0.8320  mean=0.6610
+[Gen 399] best=0.8320  mean=0.6976
+[Gen 400] best=0.8320  mean=0.6565
+[Gen 401] best=0.8320  mean=0.6788
+[Gen 402] best=0.8320  mean=0.6450
+[Gen 403] best=0.8320  mean=0.5646
+[Gen 404] best=0.8320  mean=0.6343
+[Gen 405] best=0.8320  mean=0.6385
+[Gen 406] best=0.8320  mean=0.6522
+[Gen 407] best=0.8320  mean=0.6251
+[Gen 408] best=0.8320  mean=0.6631
+[Gen 409] best=0.8320  mean=0.5912
+[Gen 410] best=0.8320  mean=0.6015
+[Gen 411] best=0.8320  mean=0.6778
+[Gen 412] best=0.8320  mean=0.6472
+[Gen 413] best=0.8320  mean=0.6622
+[Gen 414] best=0.8320  mean=0.6457
+[Gen 415] best=0.8320  mean=0.6097
+[Gen 416] best=0.8320  mean=0.6545
+[Gen 417] best=0.8320  mean=0.6012
+[Gen 418] best=0.8320  mean=0.6419
+[Gen 419] best=0.8320  mean=0.6235
+[Gen 420] best=0.8320  mean=0.6016
+[Gen 421] best=0.8320  mean=0.6342
+[Gen 422] best=0.8320  mean=0.6624
+[Gen 423] best=0.8320  mean=0.6087
+[Gen 424] best=0.8320  mean=0.6706
+[Gen 425] best=0.8320  mean=0.5840
+[Gen 426] best=0.8320  mean=0.6446
+[Gen 427] best=0.8320  mean=0.6167
+[Gen 428] best=0.8320  mean=0.6593
+[Gen 429] best=0.8320  mean=0.6031
+[Gen 430] best=0.8320  mean=0.6430
+[Gen 431] best=0.8320  mean=0.6576
+[Gen 432] best=0.8320  mean=0.6020
+[Gen 433] best=0.8320  mean=0.6811
+[Gen 434] best=0.8320  mean=0.6629
+[Gen 435] best=0.8320  mean=0.5965
+[Gen 436] best=0.8320  mean=0.6813
+[Gen 437] best=0.8320  mean=0.6405
+[Gen 438] best=0.8320  mean=0.6431
+[Gen 439] best=0.8320  mean=0.6051
+[Gen 440] best=0.8320  mean=0.6526
+[Gen 441] best=0.8320  mean=0.5924
+[Gen 442] best=0.8320  mean=0.6496
+[Gen 443] best=0.8320  mean=0.6187
+[Gen 444] best=0.8320  mean=0.6119
+[Gen 445] best=0.8320  mean=0.6062
+[Gen 446] best=0.8320  mean=0.6428
+[Gen 447] best=0.8320  mean=0.6587
+[Gen 448] best=0.8320  mean=0.6434
+[Gen 449] best=0.8320  mean=0.6222
+[Gen 450] best=0.8320  mean=0.6369
+[Gen 451] best=0.8320  mean=0.6432
+[Gen 452] best=0.8320  mean=0.6391
+[Gen 453] best=0.8320  mean=0.6280
+[Gen 454] best=0.8320  mean=0.6201
+[Gen 455] best=0.8320  mean=0.6313
+[Gen 456] best=0.8320  mean=0.5405
+[Gen 457] best=0.8320  mean=0.6083
+[Gen 458] best=0.8320  mean=0.6215
+[Gen 459] best=0.8320  mean=0.5931
+[Gen 460] best=0.8320  mean=0.6206
+[Gen 461] best=0.8320  mean=0.6208
+[Gen 462] best=0.8320  mean=0.6458
+[Gen 463] best=0.8320  mean=0.6215
+[Gen 464] best=0.8320  mean=0.6572
+[Gen 465] best=0.8320  mean=0.5937
+[Gen 466] best=0.8320  mean=0.6105
+[Gen 467] best=0.8320  mean=0.6377
+[Gen 468] best=0.8320  mean=0.6111
+[Gen 469] best=0.8320  mean=0.6311
+[Gen 470] best=0.8320  mean=0.6751
+[Gen 471] best=0.8320  mean=0.6464
+[Gen 472] best=0.8320  mean=0.6415
+[Gen 473] best=0.8320  mean=0.6310
+[Gen 474] best=0.8320  mean=0.6148
+[Gen 475] best=0.8320  mean=0.6137
+[Gen 476] best=0.8320  mean=0.6377
+[Gen 477] best=0.8320  mean=0.6452
+[Gen 478] best=0.8320  mean=0.6235
+[Gen 479] best=0.8320  mean=0.6428
+[Gen 480] best=0.8320  mean=0.6805
+[Gen 481] best=0.8320  mean=0.6133
+[Gen 482] best=0.8320  mean=0.6702
+[Gen 483] best=0.8320  mean=0.6564
+[Gen 484] best=0.8320  mean=0.6388
+[Gen 485] best=0.8320  mean=0.6557
+[Gen 486] best=0.8320  mean=0.6636
+[Gen 487] best=0.8320  mean=0.6256
+[Gen 488] best=0.8320  mean=0.6553
+[Gen 489] best=0.8320  mean=0.6562
+[Gen 490] best=0.8320  mean=0.6024
+[Gen 491] best=0.8320  mean=0.6443
+[Gen 492] best=0.8320  mean=0.6447
+[Gen 493] best=0.8320  mean=0.6695
+[Gen 494] best=0.8320  mean=0.6292
+[Gen 495] best=0.8320  mean=0.6409
+[Gen 496] best=0.8320  mean=0.6208
+[Gen 497] best=0.8320  mean=0.5992
+[Gen 498] best=0.8320  mean=0.6580
+[Gen 499] best=0.8320  mean=0.6350
+[Gen 500] best=0.8320  mean=0.6636
 
 === Top 5 RECIPE ===
 Rank     : 1
-Name     : cookie_601447
-ID       : child_685539699
+Name     : cookie_452070
+ID       : child_560057122
 Category : cookie
-Fitness  : 0.7992
+Fitness  : 0.832
 Ingredients (g):
-  - baking_powder        : 7.5 g
-  - baking_soda          : 1.6 g
-  - butter_unsalted      : 171.3 g
-  - buttermilk           : 20.2 g
-  - chocolate_chips      : 79.1 g
-  - cream_cheese         : 9.0 g
-  - egg_whole            : 69.6 g
-  - flour_ap             : 202.4 g
-  - salt_fine            : 4.8 g
-  - sugar_brown          : 100.1 g
-  - sugar_white          : 122.0 g
-  - vanilla_extract      : 4.4 g
-Rank     : 2
-Name     : cookie_255962
-ID       : child_884455438
-Category : cookie
-Fitness  : 0.7517
-Ingredients (g):
-  - baking_powder        : 8.0 g
-  - baking_soda          : 2.0 g
-  - butter_unsalted      : 187.9 g
-  - buttermilk           : 22.0 g
-  - chocolate_chips      : 101.8 g
-  - cream_cheese         : 10.1 g
-  - egg_whole            : 76.8 g
-  - flour_ap             : 218.1 g
-  - ginger_candied       : 24.4 g
-  - herb_rosemary        : 6.4 g
-  - jam_raspberry        : 6.2 g
-  - lemon_zest           : 22.0 g
-  - salt_fine            : 3.0 g
-  - sugar_brown          : 102.8 g
-  - sugar_white          : 137.5 g
-  - vanilla_extract      : 4.7 g
-Rank     : 3
-Name     : cookie_201534
-ID       : child_949945553
-Category : cookie
-Fitness  : 0.7635
-Ingredients (g):
-  - baking_powder        : 7.0 g
-  - butter_unsalted      : 157.2 g
-  - buttermilk           : 19.3 g
-  - chocolate_chips      : 76.0 g
-  - cream_cheese         : 5.2 g
-  - egg_whole            : 65.4 g
-  - flour_ap             : 187.3 g
-  - oil_olive            : 20.1 g
-  - salt_fine            : 4.1 g
-  - sugar_brown          : 94.0 g
-  - sugar_white          : 78.7 g
-  - vanilla_extract      : 3.6 g
-Rank     : 4
-Name     : cookie_801949
-ID       : child_64829721
-Category : cookie
-Fitness  : 0.754
-Ingredients (g):
-  - baking_powder        : 10.5 g
-  - butter_unsalted      : 202.2 g
-  - buttermilk           : 17.4 g
-  - chocolate_chips      : 92.1 g
-  - cranberries_dried    : 15.3 g
-  - cream_cheese         : 6.1 g
-  - egg_whole            : 76.8 g
-  - flour_ap             : 213.7 g
-  - salt_fine            : 3.8 g
-  - sugar_brown          : 115.7 g
-  - sugar_white          : 95.2 g
-  - vanilla_extract      : 3.8 g
-Rank     : 5
-Name     : cookie_880378
-ID       : child_618924226
-Category : cookie
-Fitness  : 0.7275
-Ingredients (g):
-  - apple_grated         : 7.6 g
-  - baking_powder        : 9.9 g
-  - baking_soda          : 3.2 g
-  - butter_unsalted      : 206.4 g
-  - buttermilk           : 26.7 g
-  - chocolate_chips      : 99.4 g
-  - cornstarch           : 13.7 g
-  - cream_cheese         : 8.3 g
-  - egg_whole            : 86.2 g
-  - flour_ap             : 233.0 g
-  - flour_wholewheat     : 23.9 g
+  - baking_soda          : 10.1 g
+  - butter_unsalted      : 202.4 g
+  - buttermilk           : 24.2 g
+  - egg_whole            : 91.9 g
+  - flour_ap             : 238.5 g
+  - jam_raspberry        : 17.9 g
+  - nuts_pecan           : 7.8 g
+  - pear_grated          : 28.2 g
+  - raisins              : 5.8 g
   - salt_fine            : 5.3 g
-  - sugar_brown          : 118.9 g
-  - sugar_white          : 113.4 g
-  - vanilla_extract      : 4.7 g
+  - sugar_brown          : 183.9 g
+  - sugar_white          : 79.1 g
+Rank     : 2
+Name     : cookie_625090
+ID       : child_148758360
+Category : cookie
+Fitness  : 0.7896
+Ingredients (g):
+  - butter_unsalted      : 220.1 g
+  - buttermilk           : 34.4 g
+  - cream_heavy          : 2.2 g
+  - egg_whole            : 100.0 g
+  - flour_ap             : 259.3 g
+  - jam_raspberry        : 19.4 g
+  - nuts_pecan           : 8.5 g
+  - pear_grated          : 30.6 g
+  - raisins              : 6.1 g
+  - salt_fine            : 5.5 g
+  - sugar_brown          : 199.9 g
+  - sugar_white          : 49.1 g
+Rank     : 3
+Name     : cookie_534254
+ID       : child_86071234
+Category : cookie
+Fitness  : 0.832
+Ingredients (g):
+  - baking_soda          : 9.5 g
+  - butter_unsalted      : 190.6 g
+  - buttermilk           : 22.7 g
+  - egg_whole            : 86.6 g
+  - flour_ap             : 224.6 g
+  - jam_raspberry        : 16.8 g
+  - nuts_pecan           : 7.3 g
+  - pear_grated          : 26.5 g
+  - raisins              : 5.5 g
+  - salt_fine            : 4.9 g
+  - sugar_brown          : 173.1 g
+  - sugar_white          : 74.5 g
+Rank     : 4
+Name     : cookie_969650
+ID       : child_352324472
+Category : cookie
+Fitness  : 0.832
+Ingredients (g):
+  - baking_soda          : 8.0 g
+  - butter_unsalted      : 159.1 g
+  - buttermilk           : 19.0 g
+  - egg_whole            : 72.2 g
+  - flour_ap             : 187.4 g
+  - jam_raspberry        : 14.0 g
+  - nuts_pecan           : 6.1 g
+  - pear_grated          : 22.1 g
+  - raisins              : 4.5 g
+  - salt_fine            : 4.1 g
+  - sugar_brown          : 144.5 g
+  - sugar_white          : 62.1 g
+Rank     : 5
+Name     : cookie_504133
+ID       : child_271601362
+Category : cookie
+Fitness  : 0.7923
+Ingredients (g):
+  - baking_soda          : 9.8 g
+  - butter_unsalted      : 196.7 g
+  - buttermilk           : 24.3 g
+  - egg_whole            : 89.3 g
+  - flour_ap             : 231.7 g
+  - jam_raspberry        : 17.3 g
+  - nuts_pecan           : 9.1 g
+  - pear_grated          : 27.4 g
+  - salt_fine            : 5.1 g
+  - sugar_brown          : 178.7 g
+  - sugar_white          : 76.8 g
 
 Process finished with exit code 0
+
+Configs =
+
+    ap = argparse.ArgumentParser(description="Evolve cookie recipes with a GA.")
+    ap.add_argument("--init", default="../configs/init_recipes.json")
+    ap.add_argument("--ingredients", default="../configs/ingredients.json")
+    ap.add_argument("--overall", default="../configs/overall_configs.json")
+    ap.add_argument("--pairings", default="../configs/flavor_pairings.json")
+    ap.add_argument("--category", default="cookie")
+
+    ap.add_argument("--population", type=int, default=50)
+    ap.add_argument("--generations", type=int, default=500)
+    ap.add_argument("--seed", type=int, default=5)
+
+    ap.add_argument("--save-csv", type=str, default="run_output.csv")
+
+    weights={
+            "flavor_score": 0,
+            "pairing_score": 0.5,
+            "soft_rules_score": 1,
+            "ratio_score": 0.25,
+            "novelty_score": 0.25,
+            "simplicity_score": 0.3,
+        }
+
+        max_generations=args.generations,
+        population_size=args.population,
+        random_seed=args.seed,
+
+        tournament_k=3,
+        survivor_fraction=0.5,
+        elitism_n=3,
+
+        crossover_prob=0.50,
+        mutation_rate=0.2,
+        mutation_strength=0.5,
+
+        add_ingredient_prob=0.5,
+        remove_ingredient_prob=0.3,
+
+        alpha_low=0.20,
+        alpha_high=0.80,
+
+        max_ingredients=20,
+        trim_below_grams=0.5,
+        bloat_remove_boost=0.35
+
