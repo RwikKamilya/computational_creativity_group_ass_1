@@ -21,9 +21,9 @@ This project evolves cookie recipes using a **Genetic Algorithm (GA)** to explor
 
 ## ⚙️ How to Run
 ```bash
-# 1. Ensure dependencies (Python ≥3.10, pandas, matplotlib)
+# 1. Ensure dependencies
 pip install -r requirements.txt
 
 # 2. Run the evolutionary process
-python run_ga.py
+python run_ga.py --population 50 --generations 500 --seed 5
 
