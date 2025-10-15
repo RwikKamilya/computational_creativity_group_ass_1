@@ -146,9 +146,9 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--pairings", default="configs/flavor_pairings.json")
     ap.add_argument("--category", default="cookie")
 
-    ap.add_argument("--population", type=int, default=100)
-    ap.add_argument("--generations", type=int, default=250)
-    ap.add_argument("--seed", type=int, default=7)
+    ap.add_argument("--population", type=int, default=80)
+    ap.add_argument("--generations", type=int, default=100)
+    ap.add_argument("--seed", type=int, default=3)
 
     ap.add_argument("--save-csv", type=str, default="run_output.csv")
     return ap.parse_args()
@@ -175,7 +175,7 @@ def main() -> None:
             "pairing_score": 0.5,
             "soft_rules_score": 1,  # up
             "ratio_score": 0.25,  # up
-            "novelty_score": 0,
+            "novelty_score": 0.25,
             "simplicity_score": 0.3,  # small nudge toward simpler recipes
         }
     )
