@@ -146,9 +146,9 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--pairings", default="configs/flavor_pairings.json")
     ap.add_argument("--category", default="cookie")
 
-    ap.add_argument("--population", type=int, default=80)
-    ap.add_argument("--generations", type=int, default=100)
-    ap.add_argument("--seed", type=int, default=3)
+    ap.add_argument("--population", type=int, default=50)
+    ap.add_argument("--generations", type=int, default=500)
+    ap.add_argument("--seed", type=int, default=5)
 
     ap.add_argument("--save-csv", type=str, default="run_output.csv")
     return ap.parse_args()

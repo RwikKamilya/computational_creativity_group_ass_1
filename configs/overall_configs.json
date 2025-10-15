@@ -4,10 +4,7 @@
     {
       "id": "cookie",
       "name": "Cookie",
-      "required_ingredients": [
-        "butter_unsalted",
-        "egg_whole"
-      ],
+      "required_ingredients": [],
       "required_roles": [
         "base",
         "fat",
@@ -88,7 +85,8 @@
         "category": "cookie",
         "type": "requires_any_ingredients",
         "ingredients": [
-          "butter_unsalted"
+          "butter_unsalted",
+          "butter_salted"
         ]
       },
       {
