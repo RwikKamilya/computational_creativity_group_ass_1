@@ -3,6 +3,7 @@ import copy
 import json
 
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from fitness_evaluator import RecipeFitness
 from genetic_algorithm import GeneticAlgorithm, GeneticAlgorithmConfig
@@ -112,6 +113,29 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--save-csv", type=str, default="run_output.csv")
     return ap.parse_args()
 
+def plot_generation_scores(generations: list, out_path: str = "best_and_mean_per_generation.png"):
+    if not generations:
+        raise ValueError("`generations` is empty.")
+
+    x = list(range(1, len(generations) + 1))
+    best = [bm[0] for bm in generations]
+    mean = [bm[1] for bm in generations]
+
+    plt.figure()
+    plt.plot(x, best, marker="o", markersize=0.8, linewidth=0.8, label="Best per generation")
+    plt.plot(x, mean, marker="s", markersize=0.8, linewidth=0.8, label="Mean per generation")
+    plt.xlabel("Generation")
+    plt.ylabel("Score")
+    plt.title("Evolution of Best and Mean Scores per Generation")
+    plt.ylim(0.3, 0.9)
+    plt.xlim(1, len(x))
+    plt.grid(True, linestyle="--", alpha=0.3)
+    plt.legend()
+
+    if out_path:
+        plt.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.show()
+
 
 def main() -> None:
     args = parse_args()
@@ -167,7 +191,8 @@ def main() -> None:
         all_ingredient_ids=all_ings,
     )
 
-    final_recipes = ga.run(verbose=True, top_k=args.population)
+    final_recipes, generation_stats = ga.run(verbose=True, top_k=args.population)
+    plot_generation_scores(generation_stats)
     top_k_recipes = select_diverse_topk(final_recipes, k=5)
     top_k_recipes = top_k_recipes[:5]
 

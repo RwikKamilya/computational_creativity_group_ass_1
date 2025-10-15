@@ -79,8 +79,10 @@ class GeneticAlgorithm:
 
 
     def run(self, verbose: bool = True, top_k: int = 5) -> List[Tuple[Recipe, float]]:
-        best: Optional[Recipe] = None
-        best_fit: float = float("-inf")
+        best = None
+        best_fit = float("-inf")
+
+        generation_stats = []
 
         for gen in range(1, self.cfg.max_generations + 1):
 
@@ -91,9 +93,8 @@ class GeneticAlgorithm:
                 best = copy.deepcopy(scored[0][0])
                 best_fit = scored[0][1]
 
-            if verbose:
-                mean_score = sum(s for _, s in scored) / len(scored)
-                print(f"[Gen {gen}] best={scored[0][1]:.4f}  mean={mean_score:.4f}")
+            mean_score = sum(s for _, s in scored) / len(scored)
+            print(f"[Gen {gen}] best={scored[0][1]:.4f}  mean={mean_score:.4f}")
 
             elites = [self._shallow_copy_with_fresh_ingredients(r) for r, _ in scored[: self.cfg.elitism_n]]
 
@@ -117,13 +118,15 @@ class GeneticAlgorithm:
                 next_pop.append(child)
 
             self.population = next_pop
+            generation_stats.append((scored[0][1], mean_score))
+
 
         final_scored = [(r, self.fitness_fn(r)) for r in self.population]
         final_scored.sort(key=lambda x: x[1], reverse=True)
         k = min(top_k, len(final_scored))
 
         top_k = [(copy.deepcopy(r), s) for (r, s) in final_scored[:k]]
-        return top_k
+        return top_k, generation_stats
 
     @staticmethod
     def _shallow_copy_with_fresh_ingredients(r: Recipe) -> Recipe:
