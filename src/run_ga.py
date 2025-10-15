@@ -140,14 +140,14 @@ def select_diverse_topk(
 
 def parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(description="Evolve cookie recipes with a GA.")
-    ap.add_argument("--init", default="../configs/init_recipes.json")
-    ap.add_argument("--ingredients", default="../configs/ingredients.json")
-    ap.add_argument("--overall", default="../configs/overall_configs.json")
-    ap.add_argument("--pairings", default="../configs/flavor_pairings.json")
+    ap.add_argument("--init", default="configs/init_recipes.json")
+    ap.add_argument("--ingredients", default="configs/ingredients.json")
+    ap.add_argument("--overall", default="configs/overall_configs.json")
+    ap.add_argument("--pairings", default="configs/flavor_pairings.json")
     ap.add_argument("--category", default="cookie")
 
-    ap.add_argument("--population", type=int, default=80)
-    ap.add_argument("--generations", type=int, default=3000)
+    ap.add_argument("--population", type=int, default=100)
+    ap.add_argument("--generations", type=int, default=250)
     ap.add_argument("--seed", type=int, default=7)
 
     ap.add_argument("--save-csv", type=str, default="run_output.csv")
@@ -171,12 +171,12 @@ def main() -> None:
         flavor_pairings_path=args.pairings,
         category_id=args.category,
         weights={
-            "flavor_score": 1.10,  # lower a bit
-            "pairing_score": 0.20,
-            "soft_rules_score": 0.40,  # up
-            "ratio_score": 0.40,  # up
-            "novelty_score": 0.40,
-            "simplicity_score": 0.20,  # small nudge toward simpler recipes
+            "flavor_score": 0,  # Set to 0 as it is 0.4 pairing + 0.6 soft rules anyway
+            "pairing_score": 0.5,
+            "soft_rules_score": 1,  # up
+            "ratio_score": 0.25,  # up
+            "novelty_score": 0,
+            "simplicity_score": 0.3,  # small nudge toward simpler recipes
         }
     )
 
@@ -189,20 +189,20 @@ def main() -> None:
         random_seed=args.seed,
 
         tournament_k=3,
-        survivor_fraction=0.90,
+        survivor_fraction=0.5,
         elitism_n=3,
 
-        crossover_prob=0.90,
-        mutation_rate=0.50,
-        mutation_strength=0.20,
+        crossover_prob=0.50,
+        mutation_rate=0.2,
+        mutation_strength=0.5,
 
-        add_ingredient_prob=0.30,
-        remove_ingredient_prob=0.25,
+        add_ingredient_prob=0.5,
+        remove_ingredient_prob=0.3,
 
         alpha_low=0.20,
         alpha_high=0.80,
 
-        max_ingredients=30,
+        max_ingredients=20,
         trim_below_grams=0.5,
         bloat_remove_boost=0.35,
     )

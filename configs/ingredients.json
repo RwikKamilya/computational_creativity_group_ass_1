@@ -10,8 +10,7 @@
   "flour_almond": {
     "name": "Almond flour",
     "roles": [
-      "base",
-      "inclusion"
+      "base"
     ],
     "category": "dry",
     "flavor_notes": [
@@ -31,8 +30,7 @@
   "flour_coconut": {
     "name": "Coconut flour",
     "roles": [
-      "base",
-      "flavor"
+      "base"
     ],
     "category": "dry",
     "flavor_notes": [
@@ -52,8 +50,7 @@
   "flour_hazelnut": {
     "name": "Hazelnut flour",
     "roles": [
-      "base",
-      "flavor"
+      "base"
     ],
     "category": "dry",
     "flavor_notes": [
@@ -89,8 +86,7 @@
   "butter_browned": {
     "name": "Browned butter",
     "roles": [
-      "fat",
-      "flavor"
+      "fat"
     ],
     "category": "fat",
     "flavor_notes": [
@@ -101,8 +97,7 @@
   "butter_salted": {
     "name": "Salted butter",
     "roles": [
-      "fat",
-      "flavor"
+      "fat"
     ],
     "category": "fat",
     "flavor_notes": [
@@ -120,8 +115,7 @@
   "oil_coconut": {
     "name": "Coconut oil",
     "roles": [
-      "fat",
-      "flavor"
+      "fat"
     ],
     "category": "fat",
     "flavor_notes": [
@@ -131,8 +125,7 @@
   "oil_olive": {
     "name": "Olive oil",
     "roles": [
-      "fat",
-      "flavor"
+      "fat"
     ],
     "category": "fat",
     "flavor_notes": [
@@ -194,8 +187,7 @@
   "buttermilk": {
     "name": "Buttermilk",
     "roles": [
-      "liquid",
-      "flavor"
+      "liquid"
     ],
     "category": "wet",
     "flavor_notes": [
@@ -320,8 +312,7 @@
     "name": "Maple syrup",
     "roles": [
       "sweetener",
-      "liquid",
-      "flavor"
+      "liquid"
     ],
     "category": "wet",
     "flavor_notes": [
@@ -331,8 +322,7 @@
   "molasses": {
     "name": "Molasses",
     "roles": [
-      "sweetener",
-      "flavor"
+      "sweetener"
     ],
     "category": "wet",
     "flavor_notes": [
@@ -383,8 +373,7 @@
   "sea_salt_flakes": {
     "name": "Sea salt flakes",
     "roles": [
-      "salt",
-      "flavor"
+      "salt"
     ],
     "category": "dry",
     "flavor_notes": []
@@ -453,8 +442,7 @@
   "cocoa_powder": {
     "name": "Cocoa powder",
     "roles": [
-      "flavor",
-      "base"
+      "flavor"
     ],
     "category": "dry",
     "flavor_notes": [
@@ -464,8 +452,7 @@
   "chocolate_chips": {
     "name": "Chocolate chips",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -475,8 +462,7 @@
   "white_chocolate": {
     "name": "White chocolate chips",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -486,8 +472,7 @@
   "dark_chocolate": {
     "name": "Dark chocolate chunks",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -497,7 +482,6 @@
   "oats_rolled": {
     "name": "Rolled oats",
     "roles": [
-      "inclusion",
       "base"
     ],
     "category": "dry",
@@ -508,8 +492,7 @@
   "coconut_flakes": {
     "name": "Shredded coconut",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -519,8 +502,7 @@
   "raisins": {
     "name": "Raisins",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -530,8 +512,7 @@
   "cranberries_dried": {
     "name": "Dried cranberries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -541,8 +522,7 @@
   "cherries_dried": {
     "name": "Dried cherries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -552,8 +532,7 @@
   "dates_chopped": {
     "name": "Chopped dates",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -563,8 +542,7 @@
   "figs_dried": {
     "name": "Dried figs",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -575,7 +553,6 @@
     "name": "Grated carrot",
     "roles": [
       "inclusion",
-      "flavor",
       "binder"
     ],
     "category": "solid",
@@ -586,8 +563,7 @@
   "apple_grated": {
     "name": "Grated apple",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -597,8 +573,7 @@
   "pear_grated": {
     "name": "Grated pear",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -608,8 +583,7 @@
   "zucchini_grated": {
     "name": "Grated zucchini",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -619,8 +593,7 @@
   "pineapple_crushed": {
     "name": "Crushed pineapple",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "wet",
     "flavor_notes": [
@@ -630,8 +603,7 @@
   "mango_puree": {
     "name": "Mango puree",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "wet",
     "flavor_notes": [
@@ -641,8 +613,7 @@
   "blueberries_fresh": {
     "name": "Fresh blueberries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -652,8 +623,7 @@
   "strawberries_diced": {
     "name": "Diced strawberries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -663,8 +633,7 @@
   "raspberries_fresh": {
     "name": "Fresh raspberries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -674,8 +643,7 @@
   "blackberries_fresh": {
     "name": "Fresh blackberries",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -685,8 +653,7 @@
   "nuts_walnut": {
     "name": "Chopped walnuts",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -696,8 +663,7 @@
   "nuts_pecan": {
     "name": "Chopped pecans",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -707,8 +673,7 @@
   "nuts_hazelnut": {
     "name": "Crushed hazelnuts",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -718,8 +683,7 @@
   "nuts_pistachio": {
     "name": "Crushed pistachios",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -729,8 +693,7 @@
   "nuts_cashew": {
     "name": "Chopped cashews",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -740,8 +703,7 @@
   "nuts_almond": {
     "name": "Chopped almonds",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -911,8 +873,7 @@
   "ginger_candied": {
     "name": "Candied ginger",
     "roles": [
-      "inclusion",
-      "flavor"
+      "inclusion"
     ],
     "category": "solid",
     "flavor_notes": [
@@ -944,8 +905,7 @@
   "cream_cheese": {
     "name": "Cream cheese",
     "roles": [
-      "binder",
-      "flavor"
+      "binder"
     ],
     "category": "dairy",
     "flavor_notes": [
@@ -955,8 +915,7 @@
   "mascarpone": {
     "name": "Mascarpone",
     "roles": [
-      "binder",
-      "flavor"
+      "binder"
     ],
     "category": "dairy",
     "flavor_notes": [
@@ -966,8 +925,7 @@
   "ricotta": {
     "name": "Ricotta cheese",
     "roles": [
-      "binder",
-      "flavor"
+      "binder"
     ],
     "category": "dairy",
     "flavor_notes": [
